@@ -5,10 +5,12 @@
 </p>
 
 <p align="center">
+  <a href="./README-KO.md">한국어</a> ·
   <a href="https://carpedm30.notion.site/m">Original Problem</a> ·
   <a href="./question.md">question.md</a> ·
   <a href="./RUN-MANUAL.md">Run Manual</a> ·
   <a href="./impl/artifacts/report.md">Final Report</a> ·
+  <a href="https://claude.com/plugins/ralph-loop">Anthropic Ralph Loop Plugin</a> ·
   <a href="./.ralph/">Ralph Loop Config</a>
 </p>
 
@@ -148,7 +150,7 @@ Before the Ralph loop ran a single iteration, I prepared the following so the lo
 
 ## 2. How the Ralph Loop Worked
 
-Ralph (named after the [Sutton-Burton-style](https://en.wikipedia.org/wiki/Sutton%E2%80%93Barto) idea of feeding the same prompt back) is a self-referential loop: at the end of every iteration the same prompt fires again. The model sees its own previous output via the files it wrote.
+Ralph is a self-referential autonomous coding loop: at the end of every iteration the same prompt fires again, and the model sees its own previous output via the files it wrote. The technique was popularised in [Geoffrey Huntley's writeup](https://ghuntley.com/ralph/) and is packaged as the official **[Anthropic Ralph Loop plugin](https://claude.com/plugins/ralph-loop)** for Claude Code — source at [`anthropics/claude-plugins-official/plugins/ralph-loop`](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/ralph-loop). This project uses that plugin (`/ralph-loop` skill) to drive 218 iterations under the `<promise>COMPLETE-SOLUTION-DELIVERABLE</promise>` completion gate.
 
 ### 2.1 The single prompt
 ```
@@ -372,7 +374,7 @@ Build time on M-chip Mac (Apple M2): ~2 min for cold build, ~34 s incremental.
 - The Ralph loop tooling and this challenge's solution notes are licensed permissively (MIT) — see [LICENSE](./LICENSE) once it exists.
 - **VulkanMod**: xCollateral (<https://github.com/xCollateral/VulkanMod>) — LGPL-3.0.
 - **Beryl**: the shader pipeline that made Beryl 26.1.2 builds available in time for this challenge.
-- The autonomous "Ralph" iteration style is described in [Geoffrey Huntley's writeup of the technique](https://ghuntley.com/ralph/).
+- The autonomous "Ralph" iteration style is described in [Geoffrey Huntley's writeup of the technique](https://ghuntley.com/ralph/) and packaged as the official **[Anthropic Ralph Loop plugin](https://claude.com/plugins/ralph-loop)** for Claude Code (source: [`anthropics/claude-plugins-official/plugins/ralph-loop`](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/ralph-loop)). This project ran on that plugin.
 
 ---
 
