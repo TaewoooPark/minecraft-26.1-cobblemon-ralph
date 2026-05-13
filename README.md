@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/license/TaewoooPark/minecraft-26.1-cobblemon-ralph?style=flat-square&labelColor=000000&color=333333&cacheSeconds=3600" alt="License">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT_%2B_MPL--2.0-000000?style=flat-square&labelColor=000000&color=333333&cacheSeconds=3600" alt="License: MIT + MPL-2.0 (dual)"></a>
   <img src="https://img.shields.io/github/stars/TaewoooPark/minecraft-26.1-cobblemon-ralph?style=flat-square&logo=github&logoColor=white&labelColor=000000&color=333333&cacheSeconds=3600" alt="GitHub stars">
   <img src="https://img.shields.io/github/last-commit/TaewoooPark/minecraft-26.1-cobblemon-ralph?style=flat-square&labelColor=000000&color=333333&cacheSeconds=3600" alt="Last commit">
   <img src="https://img.shields.io/github/languages/top/TaewoooPark/minecraft-26.1-cobblemon-ralph?style=flat-square&labelColor=000000&color=333333&cacheSeconds=3600" alt="Top language">

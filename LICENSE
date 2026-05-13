@@ -1,15 +1,53 @@
+This repository is **dual-licensed** — see the matrix below before redistributing
+any file. When in doubt, check `NOTICE.md` for full attribution.
+
+================================================================================
+SUMMARY
+================================================================================
+
+  Author's original work (Ralph loop scaffolding, docs, ledgers)  →  MIT
+  Cobblemon source / patches / diff / compiled jar                →  MPL-2.0
+
+================================================================================
+FILE COVERAGE MATRIX
+================================================================================
+
+MIT (Copyright (c) 2026 Taewoo Park, @TaewoooPark)
+  - .ralph/                        Ralph loop config & rules
+  - state/                         Solution ledger, verification, synthesis
+  - challenges/, solutions/, verification/   Phase 1 artifacts
+  - playbook/                      Phase 2 implementation specs
+  - README.md, RUN-MANUAL.md, NOTICE.md, question.md
+  - All .md files NOT inside impl/cobblemon-port/
+
+MPL-2.0 (inherited from upstream Cobblemon, Copyright The Cobblemon Team)
+  Source-of-truth:
+    https://gitlab.com/cable-mc/cobblemon  (commit a3498fe03b and earlier)
+    https://gitlab.com/cable-mc/cobblemon/-/blob/main/LICENSE
+  Covered files in this repo:
+  - impl/cobblemon-port/           Reconstituted Cobblemon source tree (gitignored;
+                                   reconstructed via impl/cobblemon-port/RECONSTITUTE.md)
+  - impl/patches/PT*.patch         Stepwise patches against upstream
+  - impl/artifacts/cobblemon-26.1-port.diff   Consolidated diff (947 files)
+  - impl/artifacts/cobblemon-26.1-port.diff.stat
+  - impl/artifacts/label-fix.patch Nameplate occlusion patch (PT151 + PT185)
+  - impl/artifacts/jars/*.jar      Compiled jars (gitignored; available via
+                                   GitHub Releases under the same MPL-2.0 terms)
+  - GitHub Release asset:
+      Cobblemon-fabric-1.8.0+26.1.2-PT191s-h10-textures.jar
+
+Third-party (NOT redistributed by this repo; listed for attribution only):
+  - Pokémon names, designs, sprites, sounds inside the jar's
+    assets/cobblemon/ directory remain IP of The Pokémon Company,
+    Game Freak, Creatures Inc., and Nintendo. See NOTICE.md §3.
+
+================================================================================
+MIT LICENSE TEXT
+================================================================================
+
 MIT License
 
 Copyright (c) 2026 Taewoo Park (@TaewoooPark)
-
-The Ralph loop scaffolding, solution notes, playbook, state ledgers, and
-documentation in this repository are licensed under MIT.
-
-The Cobblemon source code in impl/cobblemon-port/ (and the derived patches
-in impl/patches/) is licensed under the Mozilla Public License 2.0,
-inherited from the upstream Cobblemon project at
-https://gitlab.com/cable-mc/cobblemon. See impl/cobblemon-port/HEADER and
-the original Cobblemon LICENSE for the upstream terms.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -28,3 +66,21 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+================================================================================
+MPL-2.0 LICENSE TEXT
+================================================================================
+
+Full text: https://www.mozilla.org/en-US/MPL/2.0/
+
+Files marked MPL-2.0 in the matrix above are governed by the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not
+distributed with these files, You can obtain one at
+https://mozilla.org/MPL/2.0/.
+
+This License does not grant permission to use the trade names,
+trademarks, service marks, or product names of the Licensor.
+
+See `LICENSE-MPL-2.0` for the full license text bundled in this repo.
+The upstream Cobblemon project's LICENSE file is also preserved
+inside each compiled jar at `/LICENSE`.
