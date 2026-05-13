@@ -1,0 +1,41 @@
+# Cobblemon 26.1.x Port — Required Mod List (modlist.txt)
+# Generated: 2026-05-13 (iter#154 P unit)
+# Updated: 2026-05-13 (iter#180 P/R16 unit — H6 PASS state sync: Fabric Loader 0.19.2 V164, PT156-datastripped jar V167)
+# Target: Minecraft 26.1.2 · Fabric · M-chip Mac (Apple Silicon)
+# Strict premise: VulkanMod + Beryl + Cobblemon self-port + shader ON · ≥60 FPS w/ 5 Pokémon
+
+## Built-and-installed mods (this port repository)
+# id | version | source | sha512 (from impl/artifacts/shasum-512.txt) | size (bytes) | notes
+cobblemon-PT156        | 1.8.0+26.1.2-PT156-datastripped     | impl/artifacts/jars/Cobblemon-fabric-1.8.0+26.1.2-PT156-datastripped.jar (BOOT-VERIFIED iter#167 H6 PASS) | 348afcb55838cdf27b362d583abf069e319864fd6bd3c2cde9daa9c3041d33eff6fc06115ccc9099e68cb6a96ab974677373309ef186a44a195bd0ba5ae0830e | 91453171 | RECOMMENDED for server boot — data/{cobblemon,c,carryon,adorn,botanypots,generator,minecraft} 7 namespaces stripped; PT151 label-fix retained (V169 jar-bytecode confirms isOccludedByOpaqueBlock symbol + ClipContext→BlockHitResult signature); H6 boot log impl/build-logs/H6-cobblemon-server-boot-PT156-PASS.log (Done 4.908s); trade-off: datapack features (advancements/loot/recipes/structures/tags) lost
+cobblemon              | 1.8.0+26.1.2-26.1.x-a3498fe         | impl/cobblemon-port/fabric/build/libs/Cobblemon-fabric-1.8.0+26.1.2-26.1.x-a3498fe.jar (shadow production, PT151 label-fix applied iter#158, pre-PT156) | c786b0f8e494e24321a677054e6b1f689f735d2b3b9dac999caae147f5480285ae4e1255377a56e604e05753a4f68e58b5da5eb9069ff6654179404f3fcdebca | 112411219 | self-port branch port/26.1.x · entrypoint=com.cobblemon.mod.fabric.FabricBootstrap · MPL-2.0 · NOT BOOTABLE server-side (F011 registry tag refs missing — see iter#165 log B182) — use PT156 variant for actual server boot
+cobblemon-dev-slim     | 1.8.0+26.1.2-26.1.x-a3498fe         | impl/cobblemon-port/fabric/build/libs/Cobblemon-fabric-1.8.0+26.1.2-26.1.x-a3498fe-dev-slim.jar (no shadow) | adf3207c47a5b848f2e65c2f3db6d849a011a829b5c8b7641bd1b6b9f53666eefab4ad4ec4fb364b1c505b7e37f609881739f9ddc63d754e9deb3e2ac43fc849 | 33061902 | dev classifier — not for production install
+
+## Required 3rd-party dependencies (NOT yet remapped for MC 26.1.x as of 2026-05-13)
+# These are declared in fabric.mod.json `depends` block but their MC 26.1.x ports are pending upstream releases.
+# Status verified via: api.modrinth.com/v2/project/{slug}/version?game_versions=%5B%2226.1.2%22%5D
+minecraft              | 26.1.2                              | https://piston-data.mojang.com/v1/objects/{sha1}/client.jar (Mojang unobfuscated release; piston-meta.mojang.com/v1/packages/.../26.1.2.json) | n/a (vanilla) | n/a | required by fabric.mod.json `"minecraft": "26.1.2"`
+fabricloader           | 0.19.2 (effective; >=0.17.2 declared) | https://meta.fabricmc.net/v2/versions/loader (V164 iter#164 fabric-api 0.148.2+26.1.2 sub-modules require >=0.18.4; latest stable 0.19.2 per modrinth) | n/a | n/a | fabric.mod.json declares `"fabricloader": ">=0.17.2"` but actual install used 0.19.2 for H6 PASS boot (iter#165 B182, iter#167 H6 PASS); installer cmd `java -jar fabric-installer.jar server -mcversion 26.1.2 -loader 0.19.2`
+fabric-api             | 0.148.2+26.1.2                      | api.modrinth.com/v2/project/fabric-api/version?game_versions=%5B%2226.1.2%22%5D (PT002 verified version match) | n/a | n/a | required `>=0.148.2+26.1.2`; STATUS=available for 26.1.2 (PT002); 36 sub-modules each declare `fabricloader >= 0.18.4` (iter#164 F009 diag) — forced fabric-loader 0.19.2 upgrade
+fabric-language-kotlin | 1.13.11+kotlin.2.3.21               | gradle/libs.versions.toml fabric-kotlin (PT002 — runtime alignment with mod's bundled Kotlin 2.3.21) | n/a | n/a | required for Kotlin classes to load under Fabric
+java                   | 25                                  | bellsoft Liberica 25 / Eclipse Temurin 25 (gradle.properties java_version=25) | n/a | n/a | toolchain matches Loom 1.15.5 mandatory JDK (B001 F001)
+
+## Strict premise platform mods (separate install; not bundled in Cobblemon jar)
+# These complete the H2 baseline + H6+ runtime profile. Status: 3rd-party MC 26.1.x remap pending verification.
+vulkanmod              | 26.1.2-0.6.5                        | github.com/xCollateral/VulkanMod/releases (V28 26.1.2 jar pair) | n/a | n/a | non-negotiable; Apple Silicon MoltenVK backend
+beryl                  | 26.1.2-0.1.3-alpha+1                | (V29 26.1.2 jar pair) | n/a | n/a | non-negotiable; shader bridge
+
+## Optional / Integration entrypoints declared but mod absent (graceful degradation per Fabric loader)
+# Cobblemon registers these entrypoints conditionally; absence does not crash the mod.
+modmenu                | (not installed)                     | terraformersmc.com (libs.versions.toml mod-menu=11.0.3 declared, MC 26.1.x port pending) | n/a | n/a | PT150 CobblemonModMenu stubbed empty pending upstream
+jei                    | (not installed)                     | mezz.io/JustEnoughItems (libs.versions.toml jei-api=19.22.1.316 declared for 1.21.1; MC 26.1.x port pending) | n/a | n/a | CobblemonJeiPlugin currently retargets MC 26.1.x but JEI dep is 1.21.1
+lambdynamiclights      | (not installed)                     | modrinth.com/mod/lambdynamiclights (libs.versions.toml lambDynamicLights=4.1.6+1.21.1; MC 26.1.x port pending) | n/a | n/a | PT149 LambDynamicLightsInitializer stubbed empty
+fabric-permissions-api | (not installed)                     | github.com/lucko/fabric-permissions-api (libs.versions.toml fabric-permissions-api=0.3.1; MC 26.1.x port pending) | n/a | n/a | PT150 FabricPermissionValidator stubbed deny-all
+
+## Verification
+# Run after install: in-game F3 → look at "Loaded mods: N" line, then /mods (fabric) or fabric-api ModMenu list
+# Expected production set after upstream library readiness: cobblemon + fabric-api + fabric-language-kotlin + vulkanmod + beryl (+ optional: jei + modmenu + lambdynamiclights)
+
+## Source of truth
+# Built jar fabric.mod.json (unzip -p Cobblemon-fabric-…jar fabric.mod.json) — version="1.8.0+26.1.2-26.1.x-a3498fe", depends.minecraft="26.1.2", depends.fabricloader>=0.17.2, depends.fabric-api>=0.148.2+26.1.2, depends.java="25"
+# Boot-verified install (iter#167 H6 PASS state): fabric-loader 0.19.2 + fabric-api 0.148.2+26.1.2 + fabric-language-kotlin 1.13.11+kotlin.2.3.21 + Cobblemon-fabric-1.8.0+26.1.2-PT156-datastripped.jar (SHA=348afcb5..0830e) at /tmp/cobblemon-h6-fabric-server/mods/ (Server-side only; client GUI verification — H1/H2/H7-H13 — Phase 4 user-handoff)
+# Known runtime-blocked features (iter#168 H7 BLOCKED): CobblemonFabric.onInitialize is PT150-stubbed → `/pokespawn pikachu` returns "Unknown or incomplete command"; vanilla `/summon minecraft:cow` PASS confirms server entity API functional. PT157 (CommandRegistrationCallback restore, iter#178) and PT158 (loadConfig+callback, iter#179) both reverted due to F012 (cobblemon-config-lateinit-uninit) and F013 (bestspawner-config-loadinternal-npe); H7 unblock requires multi-iter PT159+ chain (config init + resource manager + BestSpawnerConfig dependencies) violating R1.

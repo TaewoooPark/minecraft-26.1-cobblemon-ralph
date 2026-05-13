@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+
+# Editor / OS clutter
+.obsidian/
+.firecrawl/
+.venv/
+
+# Cobblemon port source tree — the actual upstream code is at gitlab.com/cable-mc/cobblemon.
+# Our 26.1 port is captured as a consolidated diff (impl/artifacts/cobblemon-26.1-port.diff)
+# plus stepwise patches in impl/patches/PT*.patch. The 3.5 GB tree is excluded from this repo;
+# see impl/cobblemon-port/README.md for reconstitution.
+impl/cobblemon-port/
+!impl/cobblemon-port/RECONSTITUTE.md
+
+# Compiled jars — too large for git, attached to GitHub Releases instead
+impl/artifacts/jars/*.jar
+
+# Raw build/launch logs — too large; key PASS-evidence logs are kept individually below
+impl/build-logs/B*.log
+impl/build-logs/*-iter1??-*.log
+impl/build-logs/*-iter2??-*.log
+impl/build-logs/*.log
+!impl/build-logs/H6-cobblemon-server-boot-PT156-PASS.log
+!impl/build-logs/H7-PT170v2-5-pokemon-spawn-PASS.log
+!impl/build-logs/H10-iter204-PT184-5pokemon-spawn-NOCRASH.log
+!impl/build-logs/README.md
+
+# Stage outputs / transient
+.claude/
+*.lock
+*.tmp
+
+# Misc Cobblemon source clone bulk — keep the patches+config in this repo, not the upstream sources
+# (full upstream source is at https://gitlab.com/cable-mc/cobblemon)
+impl/cobblemon-port/common/src/main/resources/assets/cobblemon/textures/
+impl/cobblemon-port/common/src/main/resources/data/
+impl/cobblemon-port/common/src/main/resources/textures/
+
+# net/ scratchpad
+net/

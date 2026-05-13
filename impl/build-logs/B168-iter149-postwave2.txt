@@ -1,0 +1,121 @@
+  required: double,double,double,float,float
+  found:    double,double,double
+  reason: actual and formal argument lists differ in length
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:301: error: method absMoveTo in class PlayerMixin cannot be applied to given types;
+            this.absMoveTo(x, y, z);
+                ^
+  required: double,double,double,float,float
+  found:    double,double,double
+  reason: actual and formal argument lists differ in length
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:302: error: cannot find symbol
+            this.absRotateTo(yaw, pitch);
+                ^
+  symbol: method absRotateTo(float,float)
+Note: /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/BeehiveBlockEntityMixin.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+19 errors
+1 warning
+
+[Incubating] Problems report is available at: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':common:compileJava'.
+> Compilation failed; see the compiler output below.
+  Note: /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/BeehiveBlockEntityMixin.java uses or overrides a deprecated API.
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:270: error: method getList in class CompoundTag cannot be applied to given types;
+              Set<String> aspects = shoulderTag.getList(DataKeys.SHOULDER_ASPECTS, Tag.TAG_STRING).stream().map(Tag::getAsString).collect(Collectors.toSet());
+                                               ^
+    required: String
+    found:    String,byte
+    reason: actual and formal argument lists differ in length
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:294: error: method absMoveTo in class PlayerMixin cannot be applied to given types;
+              this.absMoveTo(x, y, z);
+                  ^
+    required: double,double,double,float,float
+    found:    double,double,double
+    reason: actual and formal argument lists differ in length
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:301: error: method absMoveTo in class PlayerMixin cannot be applied to given types;
+              this.absMoveTo(x, y, z);
+                  ^
+    required: double,double,double,float,float
+    found:    double,double,double
+    reason: actual and formal argument lists differ in length
+  warning: unknown enum constant When.MAYBE
+    reason: class file for javax.annotation.meta.When not found
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:302: error: cannot find symbol
+              this.absRotateTo(yaw, pitch);
+                  ^
+    symbol: method absRotateTo(float,float)
+  Note: Recompile with -Xlint:deprecation for details.
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:270: error: invalid method reference
+              Set<String> aspects = shoulderTag.getList(DataKeys.SHOULDER_ASPECTS, Tag.TAG_STRING).stream().map(Tag::getAsString).collect(Collectors.toSet());
+                                                                                                                ^
+    cannot find symbol
+      symbol:   method getAsString()
+      location: interface Tag
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:256: error: incompatible types: Optional<CompoundTag> cannot be converted to CompoundTag
+              CompoundTag pokemonTag = shoulderTag.getCompound(DataKeys.POKEMON);
+                                                              ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:258: error: incompatible types: Optional<String> cannot be converted to String
+              Species species = PokemonSpecies.getByIdentifier(Identifier.parse(pokemonTag.getString(DataKeys.POKEMON_SPECIES_IDENTIFIER)));
+                                                                                                    ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:260: error: incompatible types: Optional<String> cannot be converted to String
+              String formId = pokemonTag.getString(DataKeys.POKEMON_FORM_ID);
+                                                  ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:265: error: incompatible types: Optional<String> cannot be converted to String
+              String genderString = pokemonTag.getString(DataKeys.POKEMON_GENDER);
+                                                        ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:268: error: incompatible types: Optional<Boolean> cannot be converted to boolean
+              boolean shiny = pokemonTag.getBoolean(DataKeys.POKEMON_SHINY);
+                                                   ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:269: error: incompatible types: Optional<Integer> cannot be converted to int
+              int level = pokemonTag.getInt(DataKeys.POKEMON_LEVEL);
+                                           ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:210: error: isClientSide has private access in Level
+          if (!level().isClientSide) {
+                      ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:211: error: random has protected access in Level
+              if (stack.is(CobblemonItemTags.LEAVES_LEFTOVERS) && level().random.nextDouble() < Cobblemon.config.getAppleLeftoversChance()) {
+                                                                         ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:232: error: isClientSide has private access in Level
+          if (!level().isClientSide && (Object) this instanceof ServerPlayer player) {
+                      ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:255: error: isClientSide has private access in Level
+          if (level().isClientSide) {
+                     ^
+  Note: Recompile with -Xlint:unchecked for details.
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:291: error: method does not override or implement a method from a supertype
+      @Override
+      ^
+  Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+  Note: Some input files use unchecked or unsafe operations.
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:213: error: cannot find symbol
+                  ServerPlayer player = Objects.requireNonNull(getServer()).getPlayerList().getPlayer(uuid);
+                                                               ^
+    symbol:   method getServer()
+    location: class PlayerMixin
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:233: error: cannot find symbol
+              boolean invulnerableInBattle = this.level().getGameRules().getBoolean(CobblemonGameRules.BATTLE_INVULNERABILITY);
+                                                         ^
+    symbol:   method getGameRules()
+    location: class Level
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:281: error: cannot find symbol
+              pokemon = party.get(shoulderTag.getUUID(DataKeys.SHOULDER_UUID));
+                                             ^
+    symbol:   method getUUID(String)
+    location: variable shoulderTag of type CompoundTag
+  19 errors
+  1 warning
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to generate a Build Scan (powered by Develocity).
+
+BUILD FAILED in 13s
+12 actionable tasks: 3 executed, 9 up-to-date
+==EXIT=0==

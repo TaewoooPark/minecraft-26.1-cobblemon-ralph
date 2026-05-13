@@ -1,0 +1,30 @@
+diff --git a/gradle/build-logic/src/main/kotlin/cobblemon.base-conventions.gradle.kts b/gradle/build-logic/src/main/kotlin/cobblemon.base-conventions.gradle.kts
+index f7e24bba76..7f671618c6 100644
+--- a/gradle/build-logic/src/main/kotlin/cobblemon.base-conventions.gradle.kts
++++ b/gradle/build-logic/src/main/kotlin/cobblemon.base-conventions.gradle.kts
+@@ -16,7 +16,10 @@ plugins {
+     id("java")
+     id("java-library")
+ 
+-    id("org.cadixdev.licenser")
++    // PT005 (port/26.1.x): `org.cadixdev.licenser:0.6.1` (2021 미관리)이 Gradle 9.1.0의 ObjectFactory/extension API와 호환되지 않아
++    // build-logic 컴파일 단계에서 java.lang.StackOverflowError 발생 (F003). P01 strict는 라이선스 헤더 검증을 요구하지 않고
++    // 소스에는 이미 MPL-2.0 헤더가 존재하므로 plugin apply를 비활성화한다. 향후 maintained fork/spotless 마이그레이션 시 복구 가능.
++    // id("org.cadixdev.licenser")
+     id("dev.architectury.loom")
+     id("architectury-plugin")
+     kotlin("jvm")
+@@ -39,9 +42,10 @@ repositories {
+     maven("https://maven.parchmentmc.org")
+ }
+ 
+-license {
+-    header(rootProject.file("HEADER"))
+-}
++// PT005: licenser plugin 비활성화에 따라 license { } 블록도 제거 (extension 미존재 시 컴파일 에러 방지)
++// license {
++//     header(rootProject.file("HEADER"))
++// }
+ 
+ architectury {
+     minecraft = project.property("mc_version").toString()

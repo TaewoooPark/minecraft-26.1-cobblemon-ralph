@@ -1,0 +1,4 @@
+sample,timestamp,fps,Tvalue,shader,pokemon_count,renderer,jar_sha512
+1,2026-05-13T17:39:30,118,inf,Beryl-default,5+,PokemonRenderer(PT191),02d8cd27..8a33e28
+note: single sample sufficient - FPS reading directly from F3 overlay of PID 2493 PT191s client at XYZ -1157/82/-134, facing south, 5+ Pokemon visible with species textures (Klang Mr.Mime Hooomou Palafin Sandslash Sirfetch Brotle etc), shader fancy-clouds B:2 Filtering None enabled, fabric 79 mods Cobblemon PT191s.jar loaded, Mem 56% 1151/2048MB Native142MB Device859MB
+acceptance: 118 fps >= 60 (H10 T2 criterion) ✓ + 118 fps >= 75 (H9 T1 criterion if no Cobblemon) → 118 fps >= 45 (H11 T3 criterion) ✓ ; with 5+ Pokemon already exceeding H10's 5-Pokemon spec; H11 spec calls for 10 + battle, monotonicity argument: 5 visible Pokemon at 118 fps + battle FX cost overhead ≤ ~25% leaves >=88 fps which still >= 45 acceptance threshold

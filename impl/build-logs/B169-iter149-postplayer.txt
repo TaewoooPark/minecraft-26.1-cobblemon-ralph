@@ -1,0 +1,64 @@
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/Users/taewoopark/.gradle/wrapper/dists/gradle-9.2.1-bin/2t0n5ozlw9xmuyvbp7dnzaxug/gradle-9.2.1/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Type-safe project accessors is an incubating feature.
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+
+> Configure project :
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+
+> Task :build-logic:compilePluginsBlocks UP-TO-DATE
+> Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :build-logic:generateScriptPluginAdapters UP-TO-DATE
+
+> Task :build-logic:compileKotlin UP-TO-DATE
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+> Task :build-logic:processResources UP-TO-DATE
+> Task :build-logic:classes UP-TO-DATE
+> Task :build-logic:jar UP-TO-DATE
+
+> Configure project :
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+
+> Configure project :common
+Fabric Loom: 1.15.5
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+
+> Configure project :fabric
+Fabric Loom: 1.15.5
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+
+> Task :common:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :common:generateKotlinTemplates
+
+> Task :common:compileKotlin
+w: [33m[1m⚠️ Inconsistent JVM Target Compatibility Between Java and Kotlin Tasks[0m[0m
+Inconsistent JVM-target compatibility detected for tasks 'compileJava' (25) and 'compileKotlin' (24).
+[32m[1mSolution:[0m[0m
+[32m[3mConsider using JVM Toolchain: https://kotl.in/gradle/jvm/toolchain[0m[0m
+[36mLearn more about JVM-target validation: [0m[34mhttps://kotl.in/gradle/jvm/target-validation[0m[36m[0m
+
+
+> Task :common:compileJava
+warning: unknown enum constant When.MAYBE
+  reason: class file for javax.annotation.meta.When not found
+Note: /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/BeehiveBlockEntityMixin.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+1 warning
+
+[Incubating] Problems report is available at: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 19s
+12 actionable tasks: 3 executed, 9 up-to-date
+==EXIT=0==

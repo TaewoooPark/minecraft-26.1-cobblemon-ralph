@@ -1,0 +1,15 @@
+diff --git a/gradle.properties b/gradle.properties
+index d6b8cb8fa0..2d59c61061 100644
+--- a/gradle.properties
++++ b/gradle.properties
+@@ -7,7 +7,9 @@ org.gradle.parallel=true
+ group=com.cobblemon.mod
+ 
+ # API
+-mc_version = 1.21.1
++# PT001 (port/26.1.x): mc_version 1.21.1 → 26.1.2 (V08 Mojang unobfuscated, V28/V29 VulkanMod+Beryl 26.1.2 jar 페어 존재)
++# parchment_version은 일단 유지 — 26.1 unobfuscated에서 parchment 비호환이면 B001 빌드 실패가 reveal하고 PT002에서 처리
++mc_version = 26.1.2
+ parchment_version = 2024.07.28@zip
+ # Used in mod files
+ java_version = 21

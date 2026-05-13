@@ -1,0 +1,55 @@
+diff --git a/gradle/build-logic/src/main/kotlin/cobblemon.base-conventions.gradle.kts b/gradle/build-logic/src/main/kotlin/cobblemon.base-conventions.gradle.kts
+index f7e24bba76..48c0c0e439 100644
+--- a/gradle/build-logic/src/main/kotlin/cobblemon.base-conventions.gradle.kts
++++ b/gradle/build-logic/src/main/kotlin/cobblemon.base-conventions.gradle.kts
+@@ -16,7 +16,10 @@ plugins {
+     id("java")
+     id("java-library")
+ 
+-    id("org.cadixdev.licenser")
++    // PT005 (port/26.1.x): `org.cadixdev.licenser:0.6.1` (2021 미관리)이 Gradle 9.1.0의 ObjectFactory/extension API와 호환되지 않아
++    // build-logic 컴파일 단계에서 java.lang.StackOverflowError 발생 (F003). P01 strict는 라이선스 헤더 검증을 요구하지 않고
++    // 소스에는 이미 MPL-2.0 헤더가 존재하므로 plugin apply를 비활성화한다. 향후 maintained fork/spotless 마이그레이션 시 복구 가능.
++    // id("org.cadixdev.licenser")
+     id("dev.architectury.loom")
+     id("architectury-plugin")
+     kotlin("jvm")
+@@ -39,9 +42,10 @@ repositories {
+     maven("https://maven.parchmentmc.org")
+ }
+ 
+-license {
+-    header(rootProject.file("HEADER"))
+-}
++// PT005: licenser plugin 비활성화에 따라 license { } 블록도 제거 (extension 미존재 시 컴파일 에러 방지)
++// license {
++//     header(rootProject.file("HEADER"))
++// }
+ 
+ architectury {
+     minecraft = project.property("mc_version").toString()
+@@ -54,11 +58,20 @@ loom {
+ }
+ 
+ dependencies {
++    // PT007 (port/26.1.x): MC 26.1.2는 unobfuscated 릴리스로 piston-meta v26.1.2.json의 downloads에 client_mappings/server_mappings artifact가 없다
++    // (검증: curl https://piston-meta.mojang.com/v1/packages/77e9459d6354bc55cded19e10f87364c13110b49/26.1.2.json | jq .downloads — client, server만 존재).
++    // 따라서 `officialMojangMappings()` 호출이 RuntimeException(F004)을 던진다. Parchment-1.21 매핑도 1.21.x 전용이므로 26.1에 부적합.
++    // 해결: mappings 레이어를 제거(Loom 1.14+가 unobfuscated MC를 인식하면 mappings 미선언이 합법). fabric-api 26.1.2 build.gradle 참조 — mappings() 호출 없음.
++    // minecraft dep group은 com.mojang:minecraft로도 표기 가능하나 기존 net.minecraft도 Loom alias로 허용됨. 유지.
+     minecraft("net.minecraft:minecraft:${rootProject.property("mc_version")}")
+-    mappings(loom.layered {
+-        officialMojangMappings()
+-        parchment("org.parchmentmc.data:parchment-1.21:${rootProject.property("parchment_version")}")
+-    })
++//    mappings(loom.layered {
++//        officialMojangMappings()
++//        parchment("org.parchmentmc.data:parchment-1.21:${rootProject.property("parchment_version")}")
++//    })
++    // PT008 (port/26.1.x): archi-loom 1.14.473은 mappings 미선언 시 `Configuration 'mappings' has no dependencies` (F005).
++    // MC 26.1.x는 unobfuscated이므로 실제 매핑 데이터가 불필요. Loom의 mappings configuration 충족을 위해 empty FileCollection 주입.
++    // fabric-loom 1.15.5는 mappings 생략을 허용하지만 archi-loom 1.14 미반영(upstream lag) — 빈 dependency가 가장 작은 우회.
++    mappings(files())
+ }
+ 
+ tasks {

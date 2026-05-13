@@ -1,0 +1,20 @@
+ .../mod/common/util/adapters/TagKeyAdapter.kt      |   6 +-
+ .../cobblemon/mod/common/util/codec/CodecUtils.kt  |   6 +-
+ .../common/util/codec/internal/ClientPokemonP3.kt  |  18 ++--
+ .../common/util/codec/internal/ClientPokemonP4.kt  |   2 +-
+ .../mod/common/util/codec/internal/PokemonP3.kt    |  18 ++--
+ .../mod/common/world/CobblemonStructures.kt        |  32 +++---
+ .../mod/common/world/feature/TypeGemFeature.kt     |   2 +-
+ .../structure/CobblemonFeatureConfiguration.kt     |   6 +-
+ .../main/resources/cobblemon-common.accesswidener  | 108 ++++++++++-----------
+ fabric/build.gradle.kts                            |  47 +++++----
+ .../com/cobblemon/mod/fabric/CobblemonFabric.kt    |  12 +--
+ gradle.properties                                  |  13 ++-
+ gradle/build-logic/build.gradle.kts                |   5 +-
+ .../kotlin/cobblemon.base-conventions.gradle.kts   |  45 +++++----
+ .../cobblemon.platform-conventions.gradle.kts      |  16 ++-
+ .../cobblemon.publish-conventions.gradle.kts       |   8 +-
+ gradle/libs.versions.toml                          |  24 +++--
+ gradle/wrapper/gradle-wrapper.properties           |   2 +-
+ settings.gradle.kts                                |   5 +-
+ 458 files changed, 1719 insertions(+), 1680 deletions(-)

@@ -1,0 +1,153 @@
+From: Cobblemon 26.1.x Port — Label Fix
+Date: 2026-05-13 (iter#157 designed → iter#158 PT151 APPLIED)
+Subject: [PATCH] PokemonRenderer: skip nameplate when occluded by opaque blocks
+File: common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/PokemonRenderer.kt
+Method: fun renderNameTag (line 424)
+Helper: fun isOccludedByOpaqueBlock added at line 487
+
+Status: APPLIED + COMPILE-CLEAN (iter#158, B181 :fabric:build SUCCESS 25s).
+Pre-patch jar SHA512: b4bfbc34a832c8d26cf14e64ba5db58c434dd633ae1cb3882ee99c450606c508c6ecbd26b67ac9ecb6af134447a4456bfb0f9e5b73e83eb440c46ff33f75fa38 (112,410,437 bytes)
+Post-patch jar SHA512: c786b0f8e494e24321a677054e6b1f689f735d2b3b9dac999caae147f5480285ae4e1255377a56e604e05753a4f68e58b5da5eb9069ff6654179404f3fcdebca (112,411,219 bytes; +782 bytes)
+Runtime behavioral verification (screenshots T-H8-1..5) STILL PENDING — Prism Launcher session required.
+
+Rationale: VulkanMod (no OptiFine/Iris) leaves nametag depth-test as see-through, so
+Pokémon labels render through walls. The label fix is a raycast guard in renderNameTag.
+
+Verification once applied:
+  Before: stand behind opaque wall → Pokémon label still visible (depth-test bypass)
+  After:  stand behind opaque wall → Pokémon label NOT visible; line-of-sight returns label
+
+================================================================================
+PATCH (unified diff)
+================================================================================
+
+--- a/common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/PokemonRenderer.kt
++++ b/common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/PokemonRenderer.kt
+@@ -16,6 +16,9 @@ import net.minecraft.client.renderer.MultiBufferSource
+ import net.minecraft.network.chat.Component
+ import net.minecraft.network.chat.MutableComponent
+ import net.minecraft.util.Mth
++import net.minecraft.world.level.ClipContext
++import net.minecraft.world.phys.HitResult
++import net.minecraft.world.phys.Vec3
+ import com.mojang.blaze3d.vertex.PoseStack
+ import com.cobblemon.mod.common.api.text.SPACE
+ import com.cobblemon.mod.common.api.text.lang
+@@ -432,6 +435,11 @@ class PokemonRenderer(
+         if (entity.isInvisible) {
+             return
+         }
++        // LABEL-FIX (iter#157, port/26.1.x): occlusion test — camera raycast against opaque blocks.
++        // Reason: VulkanMod/Beryl stack lacks OptiFine's nametag depth-test, so labels bleed through walls.
++        if (isOccludedByOpaqueBlock(entity)) {
++            return
++        }
+         val player = Minecraft.getInstance().player ?: return
+         // PT145: entityRenderDispatcher field private — use Minecraft.getInstance().entityRenderDispatcher.
+         val d = Minecraft.getInstance().entityRenderDispatcher.distanceToSqr(entity)
+@@ -476,6 +484,32 @@ class PokemonRenderer(
+         }
+     }
+
++    // LABEL-FIX helper (iter#157): true if any opaque block is between camera and entity center.
++    // Uses Level.clip with BLOCK shape + NONE fluid; returns HitResult.Type.BLOCK if blocked.
++    private fun isOccludedByOpaqueBlock(entity: PokemonEntity): Boolean {
++        val mc = Minecraft.getInstance()
++        val camera = mc.gameRenderer.mainCamera
++        val level = entity.level()
++        // Camera world position
++        val from = Vec3(camera.position.x, camera.position.y, camera.position.z)
++        // Aim at entity bounding box center (slightly above feet — label is at top)
++        val bb = entity.boundingBox
++        val to = Vec3(
++            (bb.minX + bb.maxX) * 0.5,
++            bb.minY + bb.ysize * 0.75,
++            (bb.minZ + bb.maxZ) * 0.5
++        )
++        // Skip raycast if camera is inside entity bounding box (would always self-block)
++        if (bb.contains(from)) return false
++        val ctx = ClipContext(
++            from, to,
++            ClipContext.Block.COLLIDER,   // only solid blocks; matches vanilla nametag depth-test intent
++            ClipContext.Fluid.NONE,
++            entity
++        )
++        return level.clip(ctx).type == HitResult.Type.BLOCK
++    }
++
+     private fun resolveBaseLabel(entity: PokemonEntity): MutableComponent {
+         return when {
+             !ServerSettings.displayEntityNameLabel -> Component.empty()
+
+================================================================================
+NOTES
+================================================================================
+
+1. Why source patch over mixin:
+   - PT145 already converted `override fun renderNameTag` → standalone `fun renderNameTag`
+     (super.render() removed in MC 26.1.x submit pipeline). Direct edit is smallest blast
+     radius — no mixin compilation, no @Inject @At injection point, no Cancellable risk.
+   - Mixin alternative would target `PokemonRenderer.renderNameTag` HEAD with @Cancellable
+     CallbackInfo — but adds mixin classloader dependency on our own non-Minecraft class,
+     which Loom rejects.
+
+2. ClipContext.Block.COLLIDER vs OUTLINE:
+   - COLLIDER = full block collision shape (what arrows and entities collide with)
+   - OUTLINE = visual outline shape (what F3+B highlights)
+   - Use COLLIDER because that's how a player's line-of-sight would actually be obstructed.
+   - Glass blocks: COLLIDER includes them → label hidden behind glass. This matches OptiFine
+     behavior. If users want labels-through-glass, change to ClipContext.Block.VISUAL (post-PT8).
+
+3. ClipContext.Fluid.NONE:
+   - Water/lava do NOT count as occluders. Labels remain visible through fluids — same as
+     vanilla mob nameplates.
+
+4. bb.contains(from) guard:
+   - If camera is inside Pokemon's bounding box (first-person riding, e.g.), skip raycast.
+   - Without this guard, level.clip would immediately HIT (camera→exit point) and hide label.
+
+5. entity.level():
+   - In MC 26.1.x, Entity.level() is the standard accessor (was field `level` in 1.21.1).
+
+6. Performance:
+   - 1 raycast per Pokemon per frame. Cobblemon distance cap d ≤ 4096 (64 blocks) bounds
+     raycast length. Negligible on M-chip Mac.
+
+================================================================================
+TEST PLAN (H8 acceptance)
+================================================================================
+
+T-H8-1: Stand in open field, /pokespawn pikachu 5 blocks away → label visible. Take screenshot.
+        Expected: label drawn at top of Pikachu.
+
+T-H8-2: Walk behind opaque cobblestone wall, looking at where Pikachu is → label NOT visible.
+        Take screenshot.
+        Expected: label hidden; only when peeking around corner reveals label.
+
+T-H8-3: Repeat T-H8-1 through glass block (transparent collider).
+        Expected: label hidden (COLLIDER includes glass collision shape). Document choice.
+
+T-H8-4: First-person ride a Pokemon via /pokeride → label of the ridden Pokemon should remain
+        visible (bb.contains(from) guard kicks in).
+
+T-H8-5: 30s gameplay session with 5 spawned Pokemon → no FPS regression vs without patch.
+        Spark profile compare.
+
+Save screenshots to: impl/artifacts/screenshots/label-before-after/{T-H8-1,T-H8-2,T-H8-3,T-H8-4}.{before,after}.png
+
+================================================================================
+APPLICATION COMMAND (when ready in Phase 4)
+================================================================================
+
+cd impl/cobblemon-port
+git apply ../artifacts/label-fix.patch
+./gradlew :fabric:build --no-daemon
+# Then reinstall in Prism instance and run T-H8-1..5
+
+================================================================================
+ROLLBACK
+================================================================================
+
+If patch causes label to disappear entirely OR FPS regression > 5%:
+  git checkout common/src/main/kotlin/com/cobblemon/mod/common/client/render/pokemon/PokemonRenderer.kt
+  Fall back to label-fix-mixin/ approach (Mixin @Inject @At HEAD @Cancellable on renderNameTag).

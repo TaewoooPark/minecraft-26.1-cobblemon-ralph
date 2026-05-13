@@ -1,0 +1,401 @@
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/LecternBlockMixin.java:39: error: isClientSide has private access in Level
+        if (!world.isClientSide && itemStack.getItem() instanceof PokedexItem) {
+                  ^
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntityStorageMixin.java:35: error: incompatible types: bad type in conditional expression
+        int curVersion = vanillaFixed.contains(VERSION_KEY) ? vanillaFixed.getInt(VERSION_KEY) : 0;
+                                                                                 ^
+    Optional<Integer> cannot be converted to int
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/LivingEntityRendererMixin.java:23: error: type argument T#1 is not within bounds of type-variable T#2
+public class LivingEntityRendererMixin<T extends LivingEntity, M extends EntityModel<T>> {
+                                                                                     ^
+  where T#1,T#2 are type-variables:
+    T#1 extends LivingEntity declared in class LivingEntityRendererMixin
+    T#2 extends EntityRenderState declared in class EntityModel
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/RecipeBookTabButtonMixin.java:31: error: cannot find symbol
+                if (recipeCollection.hasKnownRecipes() && recipeCollection.hasFitting()) {
+                                    ^
+  symbol:   method hasKnownRecipes()
+  location: variable recipeCollection of type RecipeCollection
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/RecipeBookTabButtonMixin.java:31: error: cannot find symbol
+                if (recipeCollection.hasKnownRecipes() && recipeCollection.hasFitting()) {
+                                                                          ^
+  symbol:   method hasFitting()
+  location: variable recipeCollection of type RecipeCollection
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/CameraMixin.java:65: error: cannot find symbol
+        Entity entity = instance.getEntity();
+                                ^
+  symbol:   method getEntity()
+  location: variable instance of type Camera
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/MouseHandlerMixin.java:139: error: cannot find symbol
+            var yRotationFlip = this.minecraft.options.invertYMouse().get() ? -1 : 1;
+                                                      ^
+  symbol:   method invertYMouse()
+  location: variable options of type Options
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/RecipeCollectionMixin.java:37: error: cannot find symbol
+            boolean bl = recipeHolder.value().canCraftInDimensions(width, height) && book.contains(recipeHolder);
+                                             ^
+  symbol:   method canCraftInDimensions(int,int)
+  location: interface Recipe<CAP#1>
+  where CAP#1 is a fresh type-variable:
+    CAP#1 extends RecipeInput from capture of ?
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/RecipeCollectionMixin.java:37: error: cannot find symbol
+            boolean bl = recipeHolder.value().canCraftInDimensions(width, height) && book.contains(recipeHolder);
+                                                                                         ^
+  symbol:   method contains(RecipeHolder<CAP#1>)
+  location: variable book of type RecipeBook
+  where CAP#1 is a fresh type-variable:
+    CAP#1 extends Recipe<?> from capture of ?
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/RecipeCollectionMixin.java:44: error: cannot find symbol
+            if (bl && handler.canCraft(recipeHolder.value(), null)) {
+                             ^
+  symbol:   method canCraft(CAP#1,<null>)
+  location: variable handler of type StackedContents
+  where CAP#1 is a fresh type-variable:
+    CAP#1 extends Recipe<?> from capture of ?
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/HumanoidModelMixin.java:96: error: type argument AbstractClientPlayer is not within bounds of type-variable T
+            MountedPlayerRenderer.INSTANCE.animate((HumanoidModel<AbstractClientPlayer>)(Object)this, pokemonEntity, player, netHeadYaw, headPitch, ageInTicks, limbSwing, limbSwingAmount);
+                                                                  ^
+  where T is a type-variable:
+    T extends HumanoidRenderState declared in class HumanoidModel
+/Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/HumanoidModelMixin.java:96: error: incompatible types: HumanoidModel<AbstractClientPlayer> cannot be converted to HumanoidModel<HumanoidRenderState>
+            MountedPlayerRenderer.INSTANCE.animate((HumanoidModel<AbstractClientPlayer>)(Object)this, pokemonEntity, player, netHeadYaw, headPitch, ageInTicks, limbSwing, limbSwingAmount);
+                                                   ^
+Note: /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/BeehiveBlockEntityMixin.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+66 errors
+1 warning
+
+[Incubating] Problems report is available at: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':common:compileJava'.
+> Compilation failed; see the compiler output below.
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/LivingEntityMixin.java:124: error: method absMoveTo in class LivingEntityMixin cannot be applied to given types;
+              this.absMoveTo(x, y, z);
+                  ^
+    required: double,double,double,float,float
+    found:    double,double,double
+    reason: actual and formal argument lists differ in length
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/LivingEntityMixin.java:130: error: method absMoveTo in class LivingEntityMixin cannot be applied to given types;
+              this.absMoveTo(x, y, z);
+                  ^
+    required: double,double,double,float,float
+    found:    double,double,double
+    reason: actual and formal argument lists differ in length
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:270: error: method getList in class CompoundTag cannot be applied to given types;
+              Set<String> aspects = shoulderTag.getList(DataKeys.SHOULDER_ASPECTS, Tag.TAG_STRING).stream().map(Tag::getAsString).collect(Collectors.toSet());
+                                               ^
+    required: String
+    found:    String,byte
+    reason: actual and formal argument lists differ in length
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:294: error: method absMoveTo in class PlayerMixin cannot be applied to given types;
+              this.absMoveTo(x, y, z);
+                  ^
+    required: double,double,double,float,float
+    found:    double,double,double
+    reason: actual and formal argument lists differ in length
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:301: error: method absMoveTo in class PlayerMixin cannot be applied to given types;
+              this.absMoveTo(x, y, z);
+                  ^
+    required: double,double,double,float,float
+    found:    double,double,double
+    reason: actual and formal argument lists differ in length
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/compat/lambdynamiclights/LambDynamicLightsInitializer.java:24: error: no suitable method found for registerSimple(Identifier,PlayerLuminance)
+      public static final EntityLuminance.Type PLAYER_LUMINANCE = EntityLuminance.Type.registerSimple(
+                                                                                      ^
+      method Type.registerSimple(@org.jetbrains.annotations.NotNull ResourceLocation,@org.jetbrains.annotations.NotNull EntityLuminance) is not applicable
+        (argument mismatch; Identifier cannot be converted to ResourceLocation)
+      method Type.registerSimple(String,EntityLuminance) is not applicable
+        (argument mismatch; Identifier cannot be converted to String)
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/ClientPacketListenerMixin.java:49: error: no suitable method found for startRiding(PokemonEntity,boolean)
+                      .forEach(x -> x.startRiding(pokemon, true));
+                                     ^
+      method Entity.startRiding(Entity) is not applicable
+        (actual and formal argument lists differ in length)
+      method Entity.startRiding(Entity,boolean,boolean) is not applicable
+        (actual and formal argument lists differ in length)
+  Note: Recompile with -Xlint:deprecation for details.
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:270: error: invalid method reference
+              Set<String> aspects = shoulderTag.getList(DataKeys.SHOULDER_ASPECTS, Tag.TAG_STRING).stream().map(Tag::getAsString).collect(Collectors.toSet());
+                                                                                                                ^
+    cannot find symbol
+      symbol:   method getAsString()
+      location: interface Tag
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/compat/lambdynamiclights/LambDynamicLightsInitializer.java:20: error: cannot access ResourceLocation
+      public static final EntityLuminance.Type POKEMON_LUMINANCE = EntityLuminance.Type.registerSimple(
+                                                                                       ^
+    class file for net.minecraft.resources.ResourceLocation not found
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntitySkeletonMixin.java:17: error: cannot find symbol
+  import net.minecraft.world.entity.monster.AbstractSkeleton;
+                                           ^
+    symbol:   class AbstractSkeleton
+    location: package net.minecraft.world.entity.monster
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntityFoxMixin.java:16: error: cannot find symbol
+  import net.minecraft.world.entity.animal.Fox;
+                                          ^
+    symbol:   class Fox
+    location: package net.minecraft.world.entity.animal
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/ItemPropertiesMixin.java:13: error: cannot find symbol
+  import net.minecraft.client.renderer.item.ItemProperties;
+                                           ^
+    symbol:   class ItemProperties
+    location: package net.minecraft.client.renderer.item
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntityVillagerMixin.java:18: error: cannot find symbol
+  import net.minecraft.world.entity.npc.Villager;
+                                       ^
+    symbol:   class Villager
+    location: package net.minecraft.world.entity.npc
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntitySkeletonMixin.java:33: error: cannot find symbol
+          final AbstractSkeleton skeleton = (AbstractSkeleton) (Object) this;
+                ^
+    symbol:   class AbstractSkeleton
+    location: class EntitySkeletonMixin
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntitySkeletonMixin.java:33: error: cannot find symbol
+          final AbstractSkeleton skeleton = (AbstractSkeleton) (Object) this;
+                                             ^
+    symbol:   class AbstractSkeleton
+    location: class EntitySkeletonMixin
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntityFoxMixin.java:33: error: cannot find symbol
+          final Fox fox = (Fox) (Object) this;
+                ^
+    symbol:   class Fox
+    location: class EntityFoxMixin
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntityFoxMixin.java:33: error: cannot find symbol
+          final Fox fox = (Fox) (Object) this;
+                           ^
+    symbol:   class Fox
+    location: class EntityFoxMixin
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntityVillagerMixin.java:27: error: cannot find symbol
+          final Villager villager = (Villager) (Object) this;
+                ^
+    symbol:   class Villager
+    location: class EntityVillagerMixin
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntityVillagerMixin.java:27: error: cannot find symbol
+          final Villager villager = (Villager) (Object) this;
+                                     ^
+    symbol:   class Villager
+    location: class EntityVillagerMixin
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/NoteBlockMixin.java:36: error: isClientSide has private access in Level
+          if (!level.isClientSide) {
+                    ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/ServerLevelMixin.java:40: error: random has protected access in Level
+                  ci.setReturnValue(Optional.of((list.get(serverLevel.random.nextInt(list.size()))).blockPosition()));
+                                                                     ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:210: error: isClientSide has private access in Level
+          if (!level().isClientSide) {
+                      ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:211: error: random has protected access in Level
+              if (stack.is(CobblemonItemTags.LEAVES_LEFTOVERS) && level().random.nextDouble() < Cobblemon.config.getAppleLeftoversChance()) {
+                                                                         ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:232: error: isClientSide has private access in Level
+          if (!level().isClientSide && (Object) this instanceof ServerPlayer player) {
+                      ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:255: error: isClientSide has private access in Level
+          if (level().isClientSide) {
+                     ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/LecternBlockMixin.java:39: error: isClientSide has private access in Level
+          if (!world.isClientSide && itemStack.getItem() instanceof PokedexItem) {
+                    ^
+  Note: Recompile with -Xlint:unchecked for details.
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/LivingEntityMixin.java:121: error: method does not override or implement a method from a supertype
+      @Override
+      ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:291: error: method does not override or implement a method from a supertype
+      @Override
+      ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/LivingEntityRendererMixin.java:23: error: type argument T#1 is not within bounds of type-variable T#2
+  public class LivingEntityRendererMixin<T extends LivingEntity, M extends EntityModel<T>> {
+                                                                                       ^
+    where T#1,T#2 are type-variables:
+      T#1 extends LivingEntity declared in class LivingEntityRendererMixin
+      T#2 extends EntityRenderState declared in class EntityModel
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/HumanoidModelMixin.java:96: error: type argument AbstractClientPlayer is not within bounds of type-variable T
+              MountedPlayerRenderer.INSTANCE.animate((HumanoidModel<AbstractClientPlayer>)(Object)this, pokemonEntity, player, netHeadYaw, headPitch, ageInTicks, limbSwing, limbSwingAmount);
+                                                                    ^
+    where T is a type-variable:
+      T extends HumanoidRenderState declared in class HumanoidModel
+  Note: Some input files use unchecked or unsafe operations.
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/compat/lambdynamiclights/PlayerLuminance.java:49: error: cannot find symbol
+          final var leftShoulder = PokemonOnShoulderRenderer.shoulderDataFrom(player.getShoulderEntityLeft());
+                                                                                    ^
+    symbol:   method getShoulderEntityLeft()
+    location: variable player of type Player
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/compat/lambdynamiclights/PlayerLuminance.java:50: error: cannot find symbol
+          final var rightShoulder = PokemonOnShoulderRenderer.shoulderDataFrom(player.getShoulderEntityRight());
+                                                                                     ^
+    symbol:   method getShoulderEntityRight()
+    location: variable player of type Player
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/TargetingConditionsMixin.java:28: error: cannot find symbol
+              if (player.level().getGameRules().getBoolean(CobblemonGameRules.MOB_TARGET_IN_BATTLE)) return;
+                                               ^
+    symbol:   method getBoolean(GameRule<Boolean>)
+    location: class GameRules
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/SoundEngineMixin.java:77: error: cannot find symbol
+                  if (id == null || sound.getLocation().equals(id)) resume(sound);
+                                         ^
+    symbol:   method getLocation()
+    location: variable sound of type SoundInstance
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/SoundEngineMixin.java:83: error: cannot find symbol
+                  if (sound.getLocation().equals(id)) resume(sound);
+                           ^
+    symbol:   method getLocation()
+    location: variable sound of type SoundInstance
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/SoundEngineMixin.java:93: error: cannot find symbol
+                  if (id == null || sound.getLocation().equals(id)) pause(sound);
+                                         ^
+    symbol:   method getLocation()
+    location: variable sound of type SoundInstance
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/SoundEngineMixin.java:99: error: cannot find symbol
+                  if (sound.getLocation().equals(id)) pause(sound);
+                           ^
+    symbol:   method getLocation()
+    location: variable sound of type SoundInstance
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/SoundEngineMixin.java:119: error: cannot find symbol
+          if (sound.getLocation().getPath().startsWith("block.note_block.")) {
+                   ^
+    symbol:   method getLocation()
+    location: variable sound of type SoundInstance
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/SoundManagerMixin.java:82: error: cannot find symbol
+          if (ambientLoopCondition(sound)) this.pauseSounds(sound.getLocation(), SoundSource.AMBIENT);
+                                                                 ^
+    symbol:   method getLocation()
+    location: variable sound of type SoundInstance
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/SoundManagerMixin.java:87: error: cannot find symbol
+          if (ambientLoopCondition(sound)) this.pauseSounds(sound.getLocation(), SoundSource.AMBIENT);
+                                                                 ^
+    symbol:   method getLocation()
+    location: variable sound of type SoundInstance
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/ServerLevelMixin.java:33: error: cannot find symbol
+              AABB aABB = AABB.encapsulatingFullBlocks(blockPos, new BlockPos(blockPos.atY(serverLevel.getMaxBuildHeight()))).inflate(64.0);
+                                                                                                      ^
+    symbol:   method getMaxBuildHeight()
+    location: variable serverLevel of type ServerLevel
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/ServerPlayerMixin.java:60: error: cannot find symbol
+          } else if (!serverLevel().getGameRules().getBoolean(CobblemonGameRules.DO_POKEMON_SPAWNING)) {
+                                                  ^
+    symbol:   method getBoolean(GameRule<Boolean>)
+    location: class GameRules
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:213: error: cannot find symbol
+                  ServerPlayer player = Objects.requireNonNull(getServer()).getPlayerList().getPlayer(uuid);
+                                                               ^
+    symbol:   method getServer()
+    location: class PlayerMixin
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:233: error: cannot find symbol
+              boolean invulnerableInBattle = this.level().getGameRules().getBoolean(CobblemonGameRules.BATTLE_INVULNERABILITY);
+                                                         ^
+    symbol:   method getGameRules()
+    location: class Level
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:281: error: cannot find symbol
+              pokemon = party.get(shoulderTag.getUUID(DataKeys.SHOULDER_UUID));
+                                             ^
+    symbol:   method getUUID(String)
+    location: variable shoulderTag of type CompoundTag
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/RecipeBookTabButtonMixin.java:31: error: cannot find symbol
+                  if (recipeCollection.hasKnownRecipes() && recipeCollection.hasFitting()) {
+                                      ^
+    symbol:   method hasKnownRecipes()
+    location: variable recipeCollection of type RecipeCollection
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/RecipeBookTabButtonMixin.java:31: error: cannot find symbol
+                  if (recipeCollection.hasKnownRecipes() && recipeCollection.hasFitting()) {
+                                                                            ^
+    symbol:   method hasFitting()
+    location: variable recipeCollection of type RecipeCollection
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/CameraMixin.java:65: error: cannot find symbol
+          Entity entity = instance.getEntity();
+                                  ^
+    symbol:   method getEntity()
+    location: variable instance of type Camera
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/MouseHandlerMixin.java:139: error: cannot find symbol
+              var yRotationFlip = this.minecraft.options.invertYMouse().get() ? -1 : 1;
+                                                        ^
+    symbol:   method invertYMouse()
+    location: variable options of type Options
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/RecipeCollectionMixin.java:37: error: cannot find symbol
+              boolean bl = recipeHolder.value().canCraftInDimensions(width, height) && book.contains(recipeHolder);
+                                               ^
+    symbol:   method canCraftInDimensions(int,int)
+    location: interface Recipe<CAP#1>
+    where CAP#1 is a fresh type-variable:
+      CAP#1 extends RecipeInput from capture of ?
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/RecipeCollectionMixin.java:37: error: cannot find symbol
+              boolean bl = recipeHolder.value().canCraftInDimensions(width, height) && book.contains(recipeHolder);
+                                                                                           ^
+    symbol:   method contains(RecipeHolder<CAP#1>)
+    location: variable book of type RecipeBook
+    where CAP#1 is a fresh type-variable:
+      CAP#1 extends Recipe<?> from capture of ?
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/RecipeCollectionMixin.java:44: error: cannot find symbol
+              if (bl && handler.canCraft(recipeHolder.value(), null)) {
+                               ^
+    symbol:   method canCraft(CAP#1,<null>)
+    location: variable handler of type StackedContents
+    where CAP#1 is a fresh type-variable:
+      CAP#1 extends Recipe<?> from capture of ?
+  Note: /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/BeehiveBlockEntityMixin.java uses or overrides a deprecated API.
+  warning: unknown enum constant When.MAYBE
+    reason: class file for javax.annotation.meta.When not found
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/LivingEntityMixin.java:131: error: cannot find symbol
+              this.absRotateTo(yaw, pitch);
+                  ^
+    symbol: method absRotateTo(float,float)
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:302: error: cannot find symbol
+              this.absRotateTo(yaw, pitch);
+                  ^
+    symbol: method absRotateTo(float,float)
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:256: error: incompatible types: Optional<CompoundTag> cannot be converted to CompoundTag
+              CompoundTag pokemonTag = shoulderTag.getCompound(DataKeys.POKEMON);
+                                                              ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:258: error: incompatible types: Optional<String> cannot be converted to String
+              Species species = PokemonSpecies.getByIdentifier(Identifier.parse(pokemonTag.getString(DataKeys.POKEMON_SPECIES_IDENTIFIER)));
+                                                                                                    ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:260: error: incompatible types: Optional<String> cannot be converted to String
+              String formId = pokemonTag.getString(DataKeys.POKEMON_FORM_ID);
+                                                  ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:265: error: incompatible types: Optional<String> cannot be converted to String
+              String genderString = pokemonTag.getString(DataKeys.POKEMON_GENDER);
+                                                        ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:268: error: incompatible types: Optional<Boolean> cannot be converted to boolean
+              boolean shiny = pokemonTag.getBoolean(DataKeys.POKEMON_SHINY);
+                                                   ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/PlayerMixin.java:269: error: incompatible types: Optional<Integer> cannot be converted to int
+              int level = pokemonTag.getInt(DataKeys.POKEMON_LEVEL);
+                                           ^
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntityStorageMixin.java:35: error: incompatible types: bad type in conditional expression
+          int curVersion = vanillaFixed.contains(VERSION_KEY) ? vanillaFixed.getInt(VERSION_KEY) : 0;
+                                                                                   ^
+      Optional<Integer> cannot be converted to int
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/client/HumanoidModelMixin.java:96: error: incompatible types: HumanoidModel<AbstractClientPlayer> cannot be converted to HumanoidModel<HumanoidRenderState>
+              MountedPlayerRenderer.INSTANCE.animate((HumanoidModel<AbstractClientPlayer>)(Object)this, pokemonEntity, player, netHeadYaw, headPitch, ageInTicks, limbSwing, limbSwingAmount);
+                                                     ^
+  Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntitySkeletonMixin.java:24: error: cannot find symbol
+  @Mixin(AbstractSkeleton.class)
+         ^
+    symbol: class AbstractSkeleton
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntityFoxMixin.java:24: error: cannot find symbol
+  @Mixin(Fox.class)
+         ^
+    symbol: class Fox
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/ItemPropertiesMixin.java:22: error: cannot find symbol
+  @Mixin(ItemProperties.class)
+         ^
+    symbol: class ItemProperties
+  /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/common/src/main/java/com/cobblemon/mod/common/mixin/EntityVillagerMixin.java:22: error: cannot find symbol
+  @Mixin(Villager.class)
+         ^
+    symbol: class Villager
+  66 errors
+  1 warning
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to generate a Build Scan (powered by Develocity).
+
+BUILD FAILED in 25s
+12 actionable tasks: 6 executed, 6 up-to-date
+==EXIT=0==

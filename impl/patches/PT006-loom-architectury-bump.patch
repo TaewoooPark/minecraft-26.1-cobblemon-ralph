@@ -1,0 +1,42 @@
+diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+index 5bdd038588..303914da11 100644
+--- a/gradle/libs.versions.toml
++++ b/gradle/libs.versions.toml
+@@ -1,6 +1,7 @@
+ [versions]
+ # Kotlin
+-kotlin = "2.2.20"
++# PT002 (port/26.1.x): kotlin 2.2.20 → 2.3.21 (fabric-language-kotlin 1.13.11+kotlin.2.3.21와 런타임 일치 필요)
++kotlin = "2.3.21"
+ 
+ # Plugins
+ licenser = "0.6.1"
+@@ -10,8 +11,12 @@ idea-ext = "1.1.7"
+ versioning = "3.1.0"
+ 
+ # Minecraft Development
+-loom = "1.11-SNAPSHOT"
+-architectury-plugin = "3.4-SNAPSHOT"
++# PT006 (port/26.1.x): Loom 1.11.458과 architectury-plugin 3.4은 MC 26.1.x unobfuscated 처리 미지원.
++# `officialMojangMappings()` 호출이 piston-meta v26.1.2.json에 client_mappings/server_mappings artifact가 없어 실패(F004).
++# MC 26.1.2는 unobfuscated 릴리스(downloads에 client/server jar만 존재 — piston-meta.mojang.com/v1/packages/.../26.1.2.json 검증)이므로
++# Loom 신버전(1.14.x)이 unobfuscated 모드를 인지하도록 bump. fabric-api 26.1.2가 fabric-loom 1.15.5를 사용하는 것과 동일 세대.
++loom = "1.14.473"
++architectury-plugin = "3.5.166"
+ moddev = "1.0.11"
+ 
+ # Common
+@@ -25,9 +30,11 @@ regex = "22.3.0"
+ truffle = "22.3.0"
+ 
+ # Fabric
++# PT002 (port/26.1.x): fabric-api·fabric-kotlin → 26.1.2 호환 (api.modrinth.com/v2/project/fabric-api/version?game_versions=%5B%2226.1.2%22%5D)
++# fabric-loader 0.17.2는 유지 — 26.1 호환성 확인 필요. B001 reveal 시 PT003에서 bump.
+ fabric-loader = "0.17.2"
+-fabric-api = "0.116.6+1.21.1"
+-fabric-kotlin = "1.13.6+kotlin.2.2.20"
++fabric-api = "0.148.2+26.1.2"
++fabric-kotlin = "1.13.11+kotlin.2.3.21"
+ fabric-permissions-api = "0.3.1"
+ lambDynamicLights = "4.1.6+1.21.1"
+ debugutils-fabric = "1.21.1-1.0.9-fabric"

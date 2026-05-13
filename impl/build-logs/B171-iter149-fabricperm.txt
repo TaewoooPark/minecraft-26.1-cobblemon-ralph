@@ -1,0 +1,221 @@
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/Users/taewoopark/.gradle/wrapper/dists/gradle-9.2.1-bin/2t0n5ozlw9xmuyvbp7dnzaxug/gradle-9.2.1/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Type-safe project accessors is an incubating feature.
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+
+> Configure project :
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+
+> Task :build-logic:compilePluginsBlocks UP-TO-DATE
+> Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :build-logic:generateScriptPluginAdapters UP-TO-DATE
+
+> Task :build-logic:compileKotlin UP-TO-DATE
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+> Task :build-logic:processResources UP-TO-DATE
+> Task :build-logic:classes UP-TO-DATE
+> Task :build-logic:jar UP-TO-DATE
+
+> Configure project :
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+
+> Configure project :common
+Fabric Loom: 1.15.5
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+
+> Configure project :fabric
+Fabric Loom: 1.15.5
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+
+> Task :assemble UP-TO-DATE
+> Task :common:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :fabric:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :check UP-TO-DATE
+> Task :build UP-TO-DATE
+> Task :fabric:copyAccessWidener UP-TO-DATE
+> Task :fabric:processResources UP-TO-DATE
+> Task :fabric:processIncludeJars UP-TO-DATE
+> Task :fabric:sourcesJar
+> Task :common:generateKotlinTemplates
+> Task :fabric:validateAccessWidener UP-TO-DATE
+> Task :fabric:check
+> Task :common:processResources UP-TO-DATE
+> Task :common:compileKotlin UP-TO-DATE
+> Task :common:compileJava UP-TO-DATE
+> Task :common:classes UP-TO-DATE
+> Task :common:processIncludeJars UP-TO-DATE
+> Task :common:jar UP-TO-DATE
+> Task :common:assemble UP-TO-DATE
+> Task :common:validateAccessWidener
+> Task :common:check
+> Task :common:build
+
+> Task :fabric:compileKotlin
+w: [33m[1m⚠️ Inconsistent JVM Target Compatibility Between Java and Kotlin Tasks[0m[0m
+Inconsistent JVM-target compatibility detected for tasks 'compileJava' (25) and 'compileKotlin' (24).
+[32m[1mSolution:[0m[0m
+[32m[3mConsider using JVM Toolchain: https://kotl.in/gradle/jvm/toolchain[0m[0m
+[36mLearn more about JVM-target validation: [0m[34mhttps://kotl.in/gradle/jvm/target-validation[0m[36m[0m
+
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:38:48 Unresolved reference 'ServerEntityWorldChangeEvents'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:44:44 Unresolved reference 'GameRuleRegistry'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:45:32 Unresolved reference 'itemgroup'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:46:32 Unresolved reference 'itemgroup'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:47:32 Unresolved reference 'itemgroup'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:48:37 Unresolved reference 'v2'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:51:52 Unresolved reference 'trade'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:52:62 Unresolved reference 'PointOfInterestHelper'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:53:41 Unresolved reference 'CompostingChanceRegistry'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:150:43 Unresolved reference 'registerBuiltinResourcePack'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:187:9 Unresolved reference 'ServerEntityWorldChangeEvents'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:187:76 Cannot infer type for value parameter 'player'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:187:84 Cannot infer type for value parameter 'origin'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:187:92 Cannot infer type for value parameter 'destination'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:215:9 Unresolved reference 'LootTableEvents'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:215:43 Cannot infer type for value parameter 'id'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:215:47 Cannot infer type for value parameter 'tableBuilder'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:215:61 Cannot infer type for value parameter 'source'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:216:46 Unresolved reference 'identifier'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:216:74 Unresolved reference 'withPool'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:260:82 Unresolved reference 'FabricItemGroup'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:268:13 Unresolved reference 'ItemGroupEvents'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:268:64 Cannot infer type for value parameter 'content'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:293:58 Unresolved reference 'PointOfInterestHelper'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:299:74 Unresolved reference 'TradeOfferHelper'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:299:165 Cannot infer type for value parameter 'factories'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:301:84 Unresolved reference 'TradeOfferHelper'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:301:171 Cannot infer type for value parameter 'factories'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:358:9 Unresolved reference 'CompostingChanceRegistry'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:367:13 Class 'CobblemonFabric.CobblemonReloadListener' is not abstract and does not implement abstract member:
+fun reload(currentReload: PreparableReloadListener.SharedState, taskExecutor: Executor, preparationBarrier: PreparableReloadListener.PreparationBarrier, reloadExecutor: Executor): CompletableFuture<Void>
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:369:9 'reload' overrides nothing. Potential signatures for overriding:
+fun reload(currentReload: PreparableReloadListener.SharedState, taskExecutor: Executor, preparationBarrier: PreparableReloadListener.PreparationBarrier, reloadExecutor: Executor): CompletableFuture<Void>
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:369:278 Argument type mismatch: actual type is 'PreparableReloadListener.PreparationBarrier', but 'PreparableReloadListener.SharedState' was expected.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:369:292 Argument type mismatch: actual type is 'ResourceManager', but 'Executor' was expected.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:369:301 Argument type mismatch: actual type is 'ProfilerFiller', but 'PreparableReloadListener.PreparationBarrier' was expected.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:369:318 Argument type mismatch: actual type is 'ProfilerFiller', but 'Executor' was expected.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:369:333 Too many arguments for 'fun reload(currentReload: PreparableReloadListener.SharedState, taskExecutor: Executor, preparationBarrier: PreparableReloadListener.PreparationBarrier, reloadExecutor: Executor): CompletableFuture<Void>'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:369:350 Too many arguments for 'fun reload(currentReload: PreparableReloadListener.SharedState, taskExecutor: Executor, preparationBarrier: PreparableReloadListener.PreparationBarrier, reloadExecutor: Executor): CompletableFuture<Void>'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:378:79 Unresolved reference 'FabricItemGroupEntries'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:380:41 Unresolved reference 'prepend'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:384:41 Unresolved reference 'addBefore'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:388:41 Unresolved reference 'addAfter'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/CobblemonFabric.kt:392:41 Unresolved reference 'accept'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:38:32 Unresolved reference 'blockrenderlayer'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:42:39 Unresolved reference 'keybinding'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:45:51 Unresolved reference 'ParticleFactoryRegistry'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:46:52 Unresolved reference 'ColorProviderRegistry'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:47:52 Unresolved reference 'EntityModelLayerRegistry'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:49:52 Unresolved reference 'HudRenderCallback'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:50:52 Unresolved reference 'WorldRenderEvents'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:54:41 Unresolved reference 'BlockColor'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:55:40 Unresolved reference 'ItemColor'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:78:1 Class 'CobblemonFabricClient' is not abstract and does not implement abstract members:
+fun registerItemColors(provider: ItemTintSource, vararg items: Item): Unit
+fun registerBlockColors(provider: BlockTintSource, vararg blocks: Block): Unit
+fun <T : BlockEntity> registerBlockEntityRenderer(type: BlockEntityType<out T>, factory: BlockEntityRendererProvider<T, BlockEntityRenderState>): Unit
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:83:54 Unresolved reference 'addModels'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:85:20 Unresolved reference 'addModels'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:93:63 Unresolved reference 'addModels'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:98:85 Class '<anonymous>' is not abstract and does not implement abstract member:
+fun reload(currentReload: PreparableReloadListener.SharedState, taskExecutor: Executor, preparationBarrier: PreparableReloadListener.PreparationBarrier, reloadExecutor: Executor): CompletableFuture<Void>
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:99:13 'reload' overrides nothing. Potential signatures for overriding:
+fun reload(currentReload: PreparableReloadListener.SharedState, taskExecutor: Executor, preparationBarrier: PreparableReloadListener.PreparationBarrier, reloadExecutor: Executor): CompletableFuture<Void>
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:109:41 Unresolved reference 'reload'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:122:9 Unresolved reference 'HudRenderCallback'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:122:44 Cannot infer type for value parameter 'graphics'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:122:54 Cannot infer type for value parameter 'tickDelta'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:151:36 Unresolved reference 'KeyBindingHelper'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:161:9 Unresolved reference 'WorldRenderEvents'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:161:56 Cannot infer type for value parameter 'context'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:164:45 Unresolved reference 'worldRenderer'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:165:41 Unresolved reference 'matrixStack'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:166:47 Unresolved reference 'positionMatrix'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:167:48 Unresolved reference 'projectionMatrix'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:168:43 Unresolved reference 'tickCounter'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:169:38 Unresolved reference 'camera'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:178:9 Unresolved reference 'EntityModelLayerRegistry'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:182:9 Unresolved reference 'ParticleFactoryRegistry'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:182:62 Unresolved reference 'ParticleFactoryRegistry'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:182:119 Argument type mismatch: actual type is 'Unit', but 'SpriteSet' was expected.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:182:119 Expression expected, but package name found.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:186:9 Unresolved reference 'BlockRenderLayerMap'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:189:5 'registerItemColors' overrides nothing. Potential signatures for overriding:
+fun registerItemColors(provider: ItemTintSource, vararg items: Item): Unit
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:189:47 Unresolved reference 'ItemColor'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:190:9 Unresolved reference 'ColorProviderRegistry'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:193:5 'registerBlockColors' overrides nothing. Potential signatures for overriding:
+fun registerBlockColors(provider: BlockTintSource, vararg blocks: Block): Unit
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:193:48 Unresolved reference 'BlockColor'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:194:9 Unresolved reference 'ColorProviderRegistry'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:197:5 'registerBlockEntityRenderer' overrides nothing. Potential signatures for overriding:
+fun <T : BlockEntity> registerBlockEntityRenderer(type: BlockEntityType<out T>, factory: BlockEntityRendererProvider<T, BlockEntityRenderState>): Unit
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:197:130 2 type arguments expected for 'interface BlockEntityRendererProvider<T : BlockEntity, S : BlockEntityRenderState> : Any'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/CobblemonFabricClient.kt:198:30 Cannot infer type for type parameter 'S'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/integration/modmenu/CobblemonModMenu.kt:17:16 Cannot infer type for type parameter 'S'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/integration/modmenu/CobblemonModMenu.kt:17:16 Cannot access class 'net.minecraft.class_437'. Check your module classpath for missing or conflicting dependencies.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/integration/modmenu/CobblemonModMenu.kt:17:36 Cannot infer type for type parameter 'S'. Specify it explicitly.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/integration/modmenu/CobblemonModMenu.kt:17:38 Cannot access class 'net.minecraft.class_437'. Check your module classpath for missing or conflicting dependencies.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/integration/modmenu/CobblemonModMenu.kt:18:13 Return type mismatch: expected 'uninferred S! (of fun <S : class_437!> ConfigScreenFactory)', actual 'CobblemonConfigScreen'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/integration/modmenu/CobblemonModMenu.kt:18:35 Argument type mismatch: actual type is 'net.minecraft.class_437!', but 'Screen?' was expected.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/client/integration/modmenu/CobblemonModMenu.kt:18:35 Cannot access class 'net.minecraft.class_437'. Check your module classpath for missing or conflicting dependencies.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/CobblemonFabricDataGenerator.kt:16:1 Class 'CobblemonFabricDataGenerator' is not abstract and does not implement abstract member:
+fun onInitializeDataGenerator(p0: FabricDataGenerator): Unit
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/CobblemonFabricDataGenerator.kt:17:5 'onInitializeDataGenerator' overrides nothing. Potential signatures for overriding:
+fun onInitializeDataGenerator(p0: FabricDataGenerator): Unit
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/CobblemonFabricDataGenerator.kt:25:14 None of the following candidates is applicable:
+
+fun <T : DataProvider> addProvider(p0: FabricDataGenerator.Pack.Factory<T>): T
+fun <T : DataProvider> addProvider(p0: FabricDataGenerator.Pack.RegistryDependentFactory<T>): T
+fun <T : DataProvider> addProvider(factory: DataProvider.Factory<T>): T
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:14:43 Unresolved reference 'FabricDataOutput'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:15:52 Unresolved reference 'FabricBlockLootTableProvider'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:38:17 Unresolved reference 'FabricDataOutput'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:40:5 Unresolved reference 'FabricBlockLootTableProvider'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:56:13 Unresolved reference 'add'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:64:42 Unresolved reference 'withSubPredicate'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:65:45 Unresolved reference 'ItemSubPredicates'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:66:45 Unresolved reference 'ItemEnchantmentsPredicate'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:101:13 Unresolved reference 'add'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:109:42 Unresolved reference 'withSubPredicate'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:110:45 Unresolved reference 'ItemSubPredicates'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/data/generator/providers/TypeGemsLootTableProvider.kt:111:45 Unresolved reference 'ItemEnchantmentsPredicate'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/net/FabricPacketInfo.kt:34:33 Unresolved reference 'playS2C'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/net/FabricPacketInfo.kt:36:33 Unresolved reference 'playC2S'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/net/FabricPacketInfo.kt:38:10 Unresolved reference 'register'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/net/FabricPacketInfo.kt:51:50 Cannot access 'field server: MinecraftServer': it is private in 'net.minecraft.server.level.ServerPlayer'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/permission/FabricPermissionValidator.kt:30:16 Unresolved reference 'hasPermissions'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/permission/FabricPermissionValidator.kt:33:16 Unresolved reference 'hasPermission'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/permission/FabricPermissionValidator.kt:36:16 Unresolved reference 'hasPermissions'.
+e: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/fabric/src/main/kotlin/com/cobblemon/mod/fabric/permission/FabricPermissionValidator.kt:39:16 Unresolved reference 'hasPermission'.
+
+> Task :fabric:compileKotlin FAILED
+
+[Incubating] Problems report is available at: file:///Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/cobblemon-port/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':fabric:compileKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.btapi.BuildToolsApiCompilationWork
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to generate a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 17s
+22 actionable tasks: 4 executed, 18 up-to-date
+==EXIT=0==

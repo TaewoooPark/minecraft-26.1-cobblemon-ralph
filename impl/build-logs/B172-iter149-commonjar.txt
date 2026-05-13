@@ -1,0 +1,41 @@
+Type-safe project accessors is an incubating feature.
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+> Task :build-logic:compilePluginsBlocks UP-TO-DATE
+> Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :build-logic:generateScriptPluginAdapters UP-TO-DATE
+
+> Task :build-logic:compileKotlin UP-TO-DATE
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+> Task :build-logic:processResources UP-TO-DATE
+> Task :build-logic:classes UP-TO-DATE
+> Task :build-logic:jar UP-TO-DATE
+
+> Configure project :
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+
+> Configure project :common
+Fabric Loom: 1.15.5
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+
+> Configure project :fabric
+Fabric Loom: 1.15.5
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+
+> Task :common:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :common:generateKotlinTemplates
+> Task :common:processResources UP-TO-DATE
+> Task :common:compileKotlin UP-TO-DATE
+> Task :common:compileJava UP-TO-DATE
+> Task :common:classes UP-TO-DATE
+> Task :common:processIncludeJars UP-TO-DATE
+> Task :common:jar UP-TO-DATE
+
+BUILD SUCCESSFUL in 9s
+15 actionable tasks: 1 executed, 14 up-to-date
+==EXIT=0==
