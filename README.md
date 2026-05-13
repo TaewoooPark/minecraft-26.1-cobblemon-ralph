@@ -136,6 +136,8 @@ Eleven layered runtime errors found by spawning a single `cobblemon:pokemon` ent
 
 End of cascade: `/summon cobblemon:pokemon 0 100 N` → `[04:20:19] Summoned new Pineco` + 4 more in sequence. **H7 PASS.**
 
+> ⚠️ **Spawn-command pitfall** (added 2026-05-13): vanilla `/summon cobblemon:pokemon ... {Pokemon:{Species:"pikachu"}}` applies the NBT *after* Cobblemon's species deserialize chain has run, so the Species field gets silently dropped and a **random species** is spawned (this is exactly how Pineco/Shroomish/Azurill came up in the H7 log above). To spawn a *specific* species, always use Cobblemon's own command: **`/pokespawn pikachu`** (see `RUN-MANUAL.md` §6).
+
 ### 3.6 Client spawn no-crash (PT178–PT184)
 Server can spawn — but the client crashed on the first spawn packet because:
 - `LegacyItemConditionWrapperAdapter` deserializes evolution items via `BuiltInRegistries.ITEM.lookup("cobblemon:electirizer")` → unknown item → fatal. **PT184a**: filter unknown items + `EMPTY_PREDICATE` fallback.

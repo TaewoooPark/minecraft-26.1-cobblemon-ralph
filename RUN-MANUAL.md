@@ -116,14 +116,30 @@ shasum -a 512 ~/Library/Application\ Support/minecraft/mods/Cobblemon-fabric-1.8
 
 ```
 /gamemode creative
-/summon cobblemon:pokemon ~ ~ ~ {Pokemon:{Species:"pikachu"}}
-/summon cobblemon:pokemon ~ ~ ~ {Pokemon:{Species:"charmander"}}
-/summon cobblemon:pokemon ~ ~ ~ {Pokemon:{Species:"squirtle"}}
-/summon cobblemon:pokemon ~ ~ ~ {Pokemon:{Species:"bulbasaur"}}
-/summon cobblemon:pokemon ~ ~ ~ {Pokemon:{Species:"eevee"}}
+/pokespawn pikachu
+/pokespawn charmander
+/pokespawn squirtle
+/pokespawn bulbasaur
+/pokespawn eevee
 ```
 
-**또는** 인벤토리(`E`)에서 검색창에 `pokemon` → Spawn Egg 5종을 우클릭으로 배치.
+> ⚠️ **`/summon cobblemon:pokemon ... {Pokemon:{Species:"pikachu"}}` 를 쓰지 마세요.**
+> Vanilla `/summon` 의 NBT 페이로드는 Cobblemon 의 species deserialize 체인보다 늦게 적용돼서
+> Species 필드가 무시되고 **랜덤 종**이 spawn됩니다 (H7 검증에서도 Pineco/Shroomish/Azurill 등이 나옴).
+> Cobblemon 전용 명령 **`/pokespawn <species>`** 가 정확한 종을 보장합니다.
+
+**대안 1** — 레벨까지 지정:
+```
+/pokespawn pikachu level=50
+```
+
+**대안 2** — 인벤토리에 직접 가하기 (전투 시연용):
+```
+/pokegive @s pikachu
+/pokegive @s charmander
+```
+
+**대안 3** — 인벤토리(`E`)에서 검색창에 `cobblemon:pokemon` → Spawn Egg를 우클릭으로 배치.
 
 **팁**: 야간이면 `/time set day`, 평지가 필요하면 `/setworldspawn`.
 
@@ -169,6 +185,7 @@ shasum -a 512 demo.mp4
 | "Fabric Loader requires version ≥0.18.4" | Fabric Loader 버전 낮음 — 0.19.2로 재설치 |
 | "Mod cobblemon requires version of fabric-api ≥0.148.2" | Fabric API 버전 낮음 — Modrinth에서 26.1.2 버전 다운 |
 | 포켓몬이 안 보이고 회색 큐브로 나옴 | PT191s가 아닌 **이전 PT170 jar** 사용 중 — SHA512 재확인 |
+| **"pikachu" 라고 쳤는데 다른 종이 나옴** | **vanilla `/summon` 의 NBT 페이로드는 Cobblemon species deserialize 이후에 적용되므로 무시됨.** 반드시 `/pokespawn pikachu` 사용. `/summon cobblemon:pokemon` 만 쓰면 cobblemon 이 random species 를 할당함 (H7 검증에서도 Pineco/Shroomish/Azurill 등 랜덤이 나옴) |
 | 셰이더가 안 켜지고 메뉴 항목 없음 | Beryl 미설치 또는 VulkanMod 누락 |
 | FPS < 60 | (a) 렌더 거리 → 12 chunks 이하, (b) 청크 시뮬레이션 거리 8, (c) Fancy Clouds OFF |
 
