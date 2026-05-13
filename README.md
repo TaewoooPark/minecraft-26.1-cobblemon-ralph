@@ -1,4 +1,46 @@
-# Minecraft Challenge — Cobblemon 26.1.x on M-chip Mac (Ralph Loop)
+<h1 align="center">Minecraft Challenge — Cobblemon 26.1.x on M-chip Mac</h1>
+
+<p align="center">
+  <em>A 24-hour solo challenge solved by a Claude Code autonomous "Ralph loop" — 218 iterations, 191 patches, all 16 strict checkpoints PASS.</em>
+</p>
+
+<p align="center">
+  <a href="https://carpedm30.notion.site/m">Original Problem</a> ·
+  <a href="./question.md">question.md</a> ·
+  <a href="./RUN-MANUAL.md">Run Manual</a> ·
+  <a href="./impl/artifacts/report.md">Final Report</a> ·
+  <a href="./.ralph/">Ralph Loop Config</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/license/TaewoooPark/minecraft-26.1-cobblemon-ralph?style=flat-square&labelColor=000000&color=333333&cacheSeconds=3600" alt="License">
+  <img src="https://img.shields.io/github/stars/TaewoooPark/minecraft-26.1-cobblemon-ralph?style=flat-square&logo=github&logoColor=white&labelColor=000000&color=333333&cacheSeconds=3600" alt="GitHub stars">
+  <img src="https://img.shields.io/github/last-commit/TaewoooPark/minecraft-26.1-cobblemon-ralph?style=flat-square&labelColor=000000&color=333333&cacheSeconds=3600" alt="Last commit">
+  <img src="https://img.shields.io/github/languages/top/TaewoooPark/minecraft-26.1-cobblemon-ralph?style=flat-square&labelColor=000000&color=333333&cacheSeconds=3600" alt="Top language">
+  <img src="https://img.shields.io/github/repo-size/TaewoooPark/minecraft-26.1-cobblemon-ralph?style=flat-square&labelColor=000000&color=333333&cacheSeconds=3600" alt="Repo size">
+  &nbsp;
+  <img src="https://img.shields.io/badge/Minecraft-26.1.2-000000?style=flat-square&logo=minecraft&logoColor=white&labelColor=000000" alt="Minecraft 26.1.2">
+  <img src="https://img.shields.io/badge/Fabric-0.19.2-000000?style=flat-square&labelColor=000000" alt="Fabric 0.19.2">
+  <img src="https://img.shields.io/badge/Kotlin-2.3.21-000000?style=flat-square&logo=kotlin&logoColor=white&labelColor=000000" alt="Kotlin 2.3.21">
+  <img src="https://img.shields.io/badge/Java-25-000000?style=flat-square&logo=openjdk&logoColor=white&labelColor=000000" alt="Java 25">
+  <img src="https://img.shields.io/badge/Gradle-9.2.1-000000?style=flat-square&logo=gradle&logoColor=white&labelColor=000000" alt="Gradle 9.2.1">
+  &nbsp;
+  <img src="https://img.shields.io/badge/Claude_Code-000000?style=flat-square&logo=anthropic&logoColor=white&labelColor=000000" alt="Claude Code">
+  <img src="https://img.shields.io/badge/Anthropic-000000?style=flat-square&logo=anthropic&logoColor=white&labelColor=000000" alt="Anthropic">
+  <img src="https://img.shields.io/badge/Ralph_Loop-000000?style=flat-square&labelColor=000000" alt="Ralph Loop">
+  <img src="https://img.shields.io/badge/Agentic_Coding-000000?style=flat-square&labelColor=000000" alt="Agentic Coding">
+  &nbsp;
+  <img src="https://img.shields.io/badge/macOS-000000?style=flat-square&logo=apple&logoColor=white&labelColor=000000" alt="macOS">
+  <img src="https://img.shields.io/badge/Apple_Silicon_M2-000000?style=flat-square&logo=apple&logoColor=white&labelColor=000000" alt="Apple Silicon M2">
+  <img src="https://img.shields.io/badge/VulkanMod-0.6.5-000000?style=flat-square&logo=vulkan&logoColor=white&labelColor=000000" alt="VulkanMod 0.6.5">
+  <img src="https://img.shields.io/badge/Beryl-0.1.3--alpha-000000?style=flat-square&labelColor=000000" alt="Beryl shader">
+</p>
+
+<p align="center">
+  <strong>118 FPS</strong> with 10+ textured Pokémon · <strong>16/16 H-checkpoints PASS</strong> · <strong>60s</strong> demo · <strong>SHA512</strong>-verified jars
+</p>
+
+---
 
 > **Original problem**: <https://carpedm30.notion.site/m> ([local mirror: `question.md`](./question.md))
 > **Goal**: Make Cobblemon (Pokémon mod) run on **Minecraft 26.1** with **VulkanMod + Beryl shader** on an **M-chip Mac at ≥60 FPS**, plus fix the bug where Pokémon nameplates render through walls.
@@ -274,5 +316,23 @@ Build time on M-chip Mac (Apple M2): ~2 min for cold build, ~34 s incremental.
 - **VulkanMod**: xCollateral (<https://github.com/xCollateral/VulkanMod>) — LGPL-3.0.
 - **Beryl**: the shader pipeline that made Beryl 26.1.2 builds available in time for this challenge.
 - The autonomous "Ralph" iteration style is described in [Geoffrey Huntley's writeup of the technique](https://ghuntley.com/ralph/).
+
+---
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Built_with-Claude_Code-000000?style=flat-square&logo=anthropic&logoColor=white&labelColor=000000" alt="Built with Claude Code">
+  <img src="https://img.shields.io/badge/Powered_by-Ralph_Loop-000000?style=flat-square&labelColor=000000" alt="Powered by Ralph Loop">
+  <img src="https://img.shields.io/badge/Iterations-218-000000?style=flat-square&labelColor=000000" alt="218 iterations">
+  <img src="https://img.shields.io/badge/Patches-191-000000?style=flat-square&labelColor=000000" alt="191 patches">
+  <img src="https://img.shields.io/badge/Checkpoints-16%2F16_PASS-000000?style=flat-square&labelColor=000000" alt="16/16 PASS">
+  <img src="https://img.shields.io/badge/Bypass-0-000000?style=flat-square&labelColor=000000" alt="Strict bypass: 0">
+</p>
+
+<p align="center">
+  <a href="https://github.com/TaewoooPark/minecraft-26.1-cobblemon-ralph/stargazers"><img src="https://img.shields.io/github/stars/TaewoooPark/minecraft-26.1-cobblemon-ralph?style=social" alt="Stars"></a>
+  &nbsp;
+  <a href="https://github.com/TaewoooPark"><img src="https://img.shields.io/badge/Built_by-%40TaewoooPark-000000?style=flat-square&logo=github&logoColor=white&labelColor=000000" alt="Built by @TaewoooPark"></a>
+  <a href="https://claude.com/claude-code"><img src="https://img.shields.io/badge/Driven_by-Claude_Code-000000?style=flat-square&logo=anthropic&logoColor=white&labelColor=000000" alt="Driven by Claude Code"></a>
+</p>
 
 > *Built by [@TaewoooPark](https://github.com/TaewoooPark) in 24 hours · driven by Claude Code · 218 iterations · 191 patches · all 16 strict checkpoints PASS.*
