@@ -63,6 +63,63 @@ The reproducibility story, the Ralph loop mechanics, the 191 patches that got us
 
 ---
 
+## ⚡ Quick Install — Use the final artifact (no build required)
+
+If you just want to **play** Cobblemon on MC 26.1.2 with this port:
+
+### Prerequisites (macOS Apple Silicon — M1 / M2 / M3 / M4)
+
+```bash
+brew install openjdk@25                  # Java 25 (required by MC 26.1.x)
+brew install --cask prismlauncher        # recommended; vanilla launcher also OK
+export JAVA_HOME=/opt/homebrew/opt/openjdk@25/libexec/openjdk.jdk/Contents/Home
+```
+
+### Install (5 minutes)
+
+1. **Minecraft 26.1.2** — open Prism Launcher → *Add Instance* → *Vanilla* → `26.1.2` → *Create*.
+2. **Fabric Loader 0.19.2** — instance → *Edit* → *Version* → *Install Fabric* → `0.19.2`.
+3. **Download 5 mod jars** into the instance's `mods/` folder:
+
+| Mod | Version | Source |
+|---|---|---|
+| **Cobblemon (this port)** | `1.8.0+26.1.2-PT191s-h10-textures` | **[GitHub Release](https://github.com/TaewoooPark/minecraft-26.1-cobblemon-ralph/releases/latest)** |
+| Fabric API | `0.148.2+26.1.2` | <https://modrinth.com/mod/fabric-api/versions?g=26.1.2> |
+| Fabric Language Kotlin | `1.13.11+kotlin.2.3.21` | <https://modrinth.com/mod/fabric-language-kotlin> |
+| VulkanMod | `26.1.2-0.6.5` | <https://github.com/xCollateral/VulkanMod/releases> |
+| Beryl (shader bridge) | `26.1.2-0.1.3-alpha+1` | VulkanMod releases page or Modrinth |
+
+4. **Verify the Cobblemon jar SHA512**:
+```bash
+shasum -a 512 ~/Library/Application\ Support/PrismLauncher/instances/<your-instance>/minecraft/mods/Cobblemon-fabric-1.8.0+26.1.2-PT191s-h10-textures.jar
+# Expected: 02d8cd271b78283cbcb54a0ee1676450c2b7adc42a163d6e1c9e133c871247ae16616f161727aa5d713fa337738f587f7dcadffc2f784cd552aefc0df8a33e28
+```
+
+5. **Launch** the instance.
+6. *Options → Video Settings → VulkanMod* — confirm active.
+7. *Options → Shaders → `Beryl-default`* → *Apply*.
+
+### Use (in-game)
+
+```
+/gamemode creative
+/pokespawn pikachu                    # spawn a Pokémon by species
+/pokespawn charmander level=50        # with options
+/pokegive @s squirtle                 # give to your inventory
+```
+
+> ⚠️ Use **`/pokespawn`**, *not* vanilla `/summon cobblemon:pokemon ... {Pokemon:{Species:"pikachu"}}`. The NBT payload is applied after Cobblemon's species deserialize chain → species is ignored and a random Pokémon spawns. See [RUN-MANUAL.md §6](./RUN-MANUAL.md) for the full workflow.
+
+### Step-by-step manual
+
+For the full end-user workflow (recording demo video, troubleshooting, FPS verification) see [**`RUN-MANUAL.md`**](./RUN-MANUAL.md).
+
+### Legal / license
+
+This is an **unofficial** port of Cobblemon (MPL-2.0). Not affiliated with Cable MC, The Pokémon Company, Game Freak, or Nintendo. Full attribution and modification disclosure: [`NOTICE.md`](./NOTICE.md).
+
+---
+
 ## 1. Pre‑Ralph Setup (what I did manually before launching the loop)
 
 Before the Ralph loop ran a single iteration, I prepared the following so the loop would have a frame:

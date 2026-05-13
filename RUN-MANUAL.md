@@ -82,12 +82,26 @@ cd ~/Library/Application\ Support/minecraft/mods
 | Fabric Language Kotlin | `1.13.11+kotlin.2.3.21` | <https://modrinth.com/mod/fabric-language-kotlin> |
 | VulkanMod | `26.1.2-0.6.5` | <https://github.com/xCollateral/VulkanMod/releases> |
 | Beryl (shader bridge) | `26.1.2-0.1.3-alpha+1` | (VulkanMod releases 페이지 또는 Modrinth) |
-| **Cobblemon-PT191s** | `1.8.0+26.1.2-PT191s-h10-textures` | **이 레포의 `impl/artifacts/jars/`** (포팅 산출물) |
+| **Cobblemon-PT191s** | `1.8.0+26.1.2-PT191s-h10-textures` | **[GitHub Release](https://github.com/TaewoooPark/minecraft-26.1-cobblemon-ralph/releases/latest)** |
 
-**Cobblemon jar 복사** (이 레포 기준):
+**Cobblemon jar 받기 — 옵션 A: GitHub Release (권장)**
 ```bash
-cp /Users/taewoopark/Desktop/Obsidian-Sync/Mincraft-Challenge/impl/artifacts/jars/Cobblemon-fabric-1.8.0+26.1.2-PT191s-h10-textures.jar \
-   ~/Library/Application\ Support/minecraft/mods/
+cd ~/Library/Application\ Support/minecraft/mods
+curl -L -o Cobblemon-fabric-1.8.0+26.1.2-PT191s-h10-textures.jar \
+  "https://github.com/TaewoooPark/minecraft-26.1-cobblemon-ralph/releases/latest/download/Cobblemon-fabric-1.8.0+26.1.2-PT191s-h10-textures.jar"
+```
+
+**Cobblemon jar 받기 — 옵션 B: 소스에서 빌드** (재현 검증용)
+
+[`impl/cobblemon-port/RECONSTITUTE.md`](./impl/cobblemon-port/RECONSTITUTE.md) 참고. 요약:
+```bash
+git clone https://gitlab.com/cable-mc/cobblemon.git impl/cobblemon-port
+cd impl/cobblemon-port
+git checkout a3498fe03b
+git apply ../artifacts/cobblemon-26.1-port.diff
+export JAVA_HOME=/opt/homebrew/opt/openjdk@25/libexec/openjdk.jdk/Contents/Home
+./gradlew :fabric:build --no-daemon
+cp fabric/build/libs/Cobblemon-fabric-*.jar ~/Library/Application\ Support/minecraft/mods/
 ```
 
 **SHA512 검증** (포팅 산출물 무결성):
