@@ -51,6 +51,43 @@
 
 ---
 
+> ## 🔍 외부 평가 결과 (2026-05-14)
+>
+> 공개 릴리스 이후 외부 검토자가 두 가지 사안을 제기했습니다. 두 사안의 원인, 증거, 해결 상태를 그대로 옮겨 적어, 독자가 직접 깊이 들어가 보지 않더라도 이 작업물의 한계를 판단할 수 있도록 정리해 두었습니다.
+>
+> ### 지적 사항 1 — 재현 실패: `RECONSTITUTE.md` HTTP 404 응답
+>
+> - **증상**: `README §5`("소스로부터 재현하기")의 안내를 따라가면 `impl/cobblemon-port/RECONSTITUTE.md` 링크에 도달하는데, `raw.githubusercontent.com` 에서 **HTTP 404** 가 반환되었습니다. 이로 인해 Option B(소스 빌드) 재현 경로가 사실상 끊긴 상태였으며, Option A(GitHub Release jar 다운로드) 만 동작했습니다.
+> - **원인**: 해당 파일은 **2026-05-13 18:46에 작성**되었으며, 이는 PT191s 빌드와 `report.md v0.8` 가 만들어진 풀이 기간 안의 시점입니다. 최초 공개 커밋 [`97b4a62`](https://github.com/TaewoooPark/minecraft-26.1-cobblemon-ralph/commit/97b4a62) 의 `.gitignore` 에는 처음부터 `!impl/cobblemon-port/RECONSTITUTE.md` 라인이 들어 있었습니다. 즉, 이 파일을 공개하려는 의도가 day-1부터 명확했다는 증거입니다. 그러나 git 의 동작 규칙상, 부모 디렉토리가 제외된 상태에서는 `!` 부정으로 하위 파일을 다시 포함시킬 수 없습니다. 바로 위 줄의 `impl/cobblemon-port/` 규칙이 예외를 무력화시켰습니다. 파일은 로컬 디스크에 존재했고 `README §5` 와 `RUN-MANUAL §4` 에서 참조되고 있었지만, remote 에는 한 번도 도달하지 못했습니다.
+> - **해결**: 커밋 [`cb96a1b`](https://github.com/TaewoooPark/minecraft-26.1-cobblemon-ralph/commit/cb96a1b) (2026-05-15) 에서 gitignore 문법을 `impl/cobblemon-port/*` 로 변경하여 `!` 부정이 작동하도록 수정한 뒤, **1717바이트 동일 파일을 변경 없이 그대로 추가**했습니다. **풀이 기간 종료 이후 새로 작성된 내용은 없습니다.** 전체 증거(파일 타임스탬프, 최초 `.gitignore` 14행 부정 라인, 바이트 단위 동일성)는 [GitHub Release 의 "Post-release errata" 섹션](https://github.com/TaewoooPark/minecraft-26.1-cobblemon-ralph/releases/tag/v1.8.0%2B26.1.2-PT191s) 에 보존되어 있습니다.
+> - **판정**: 운영상의 누락이며, 풀이 자체의 결함은 아닙니다.
+>
+> ### 지적 사항 2 — Cobblemon UX 커버리지 부족 (실제 결함, 미해결)
+>
+> 이쪽은 실제로 부족한 부분입니다. 패키징 문제가 아닙니다.
+>
+> - **증상**: 배포된 jar 는 부팅되고, `/pokespawn` 으로 종을 지정해서 정확한 텍스처와 함께 118 FPS 로 표시할 수 있으며, 벽 가림 이름표 수정도 시연됩니다. 그러나 **Cobblemon 본연의 게임 루프**, 즉 클라이언트 UI 를 통한 전투 진입, 진화 트리거, advancement 획득, 자연 스폰을 통한 야생 조우 관찰, fabric-api 이벤트 기반 훅 동작 등은 **이 빌드에서 동작하지 않습니다**. 16개의 H 체크포인트는 의도적으로 acceptance 범위를 {부팅, 스폰, 렌더, 이름표, FPS, 패키징, 감사} 로 좁혀 정의되어 있었고, 루프가 그 범위 안에서 saturate 된 뒤 한 번도 다시 열리지 않았습니다.
+> - **원인** (코드가 아닌 루프 자체의 결함): Ralph promise gate 는 작성된 규칙대로 정확하게 발화했습니다. 결함은 규칙 자체에 있습니다. 구체적으로:
+>   - PT149 와 PT150 단계에서 mixin 과 fabric-api 이벤트 훅을 대량으로 stub 처리했습니다. 풀이 시점에 해당 항목들의 26.1.x 업스트림이 존재하지 않았기 때문입니다. 이후 R14("동일 가설 반복 금지") 가 재시도를 막으면서 stub 들이 영구화되었습니다.
+>   - PT156 단계에서 26.1.x BlockBehaviour `<clinit>` NPE 를 우회하기 위해 `data/{cobblemon,minecraft}/...` 를 strip 했습니다. 이 과정에서 advancements 와 loot tables 가 조용히 사라졌습니다. 어떤 체크포인트도 이 손실을 감지하지 못했습니다.
+>   - H11 감사 단계에서 전투 와이어링을 "Phase 4 로 이연" 으로 표기했지만, `.ralph/CLAUDE.md` 에는 Phase 4 가 정의되어 있지 않았습니다. 이연된 작업에는 복귀 트리거가 없었기 때문에 루프는 다시 돌아오지 않았습니다.
+> - **판정**: 엄격 전제(`MC 26.1 + Fabric + VulkanMod + Beryl + Cobblemon 부팅 + 포켓몬 렌더 + 이름표 수정 + 60 FPS 이상`)는 충족되었습니다. **그러나 Cobblemon 의 전체 UX 는 충족되지 못했습니다.** 이 사실을 숨기지 않고 여기에 명시합니다.
+>
+> #### 향후 Ralph 워크플로우가 전체 UX 까지 도달하도록 개선하려면
+>
+> | # | 현재 `.ralph/` 의 문제 | 제안 변경 |
+> |---|---|---|
+> | **A** | C1~C15 가 "MC 26.1 플랫폼 PASS" 와 "Cobblemon UX PASS" 를 한 묶음으로 다룹니다. 좁게 정의된 H-list 가 saturate 되자, 전투/진화/advancement 가 손도 닿지 않은 상태에서 promise gate 가 발화했습니다. | acceptance 를 **두 개의 독립된 tier 로 분리**합니다. Tier-1 Platform 은 현재의 H0~H15. Tier-2 UX 는 클라이언트 UI 를 통한 전투 진입과 결과 화면, advancement 1개 이상 획득, 자연 스폰 1회 이상 관찰, 진화 체인 1단계 이상 진행. promise gate 는 `Tier1 == PASS AND Tier2 == PASS` 일 때에만 발화하도록 강제합니다. |
+> | **B** | PT149/PT150 의 대량 stub 작업에 부채 추적이 전혀 없었습니다. R14 가 이후 재시도를 차단하면서 stub 이 영구화되었습니다. | **R19 (stub-debt 원장)** 을 추가합니다. 모든 `Mixin.stub()` 과 `Stub.noOp()` 호출은 `state/stub-debt.md` 에 사유와 재구현 책임 PT 를 기록합니다. promise gate 는 N 회 반복이 지나도 재시도되지 않거나, 실제로 예약된 phase 를 가리키는 "deferred-to-Phase-N" 주석이 없는 부채 항목이 존재하면 실패시킵니다. |
+> | **C** | PT156 datastrip 이 first-party `cobblemon/` 과 `minecraft/` 데이터를 조용히 제거했지만, advancements/loot/recipes 손실을 등록하는 체크포인트가 없었습니다. | **R20 (first-party 데이터 무결성)** 을 추가합니다. `cobblemon/`, `minecraft/`, 또는 `playbook/00-manifest.md` 에서 primary 로 선언된 네임스페이스 하위 파일을 삭제하는 패치는 `state/data-loss.md` 에 짝이 되는 항목을 기록하고, 향후 10회 반복 안에 복구 PT 를 예약해야 합니다. 그렇지 않으면 promise gate 가 실패합니다. |
+> | **D** | H11 감사의 "Phase 4 로 이연" 표기가 자유 텍스트였습니다. Phase 4 는 정의된 적이 없고, 루프는 돌아오지 않았습니다. | **R21 (이연 작업 스케줄링)** 을 추가합니다. 모든 `deferred-to-Phase-N` 주석은 `state/phases.md` 에 N 을 등록하고, 명시적 체크포인트와 복귀 트리거 조건을 함께 기록해야 합니다. promise gate 는 미해결 phase 를 열거한 뒤, 하나라도 열려 있으면 발화를 거부합니다. |
+> | **E** | 단일 프롬프트 루프가 우선순위 파이프라인 `H→B→M→PT→F→A→P→G` 를 하드코딩하고 있었습니다. "현재 H-list 가 전제를 여전히 커버하는가" 를 검사하는 자리가 없었습니다. | 새 우선순위 슬롯 **U (Update-scope)** 를 추가합니다. R16 이 강제하는 5회 반복 자기 감사 시점에 발화하며, 다음을 수행합니다. "현재의 premise 기준으로, H-list 가 사용자가 관찰 가능한 acceptance 시나리오를 모두 포함하는가? 그렇지 않다면 H_x 를 추가하고 promise 자격을 초기화한다." |
+> | **F** | 루프가 비용이 낮은 플랫폼 계층(부팅 → 스폰 → 렌더) 부터 탐욕적으로 완성하면서, 비용이 높은 사용자 대면 계층(전투 UI, 진화 흐름) 으로는 끌어당기는 힘이 없었습니다. | `ralph-rule.md` 에 **비용 가중 우선순위** 를 추가합니다. 다음 H 를 선택할 때, 부팅/스폰 baseline 이 일단 확보된 뒤에는 *사용자가 관찰 가능한* 끝단(전투 > 스폰 > 부팅) 에 가까운 항목을 선호합니다. 이 가중치가 없으면 루프는 인프라 계층만 탐욕적으로 완성하고 게임플레이까지 도달하지 못합니다. |
+>
+> 이 6가지 규칙 추가가 적용된 루프였다면, (i) Cobblemon 의 전체 UX 가 범위를 벗어난다고 명시적으로 선언하고 챌린지 해결을 더 이상 주장하지 않거나, (ii) datastrip 을 복구하고 이벤트 훅의 stub 을 해제하여 전투 경로를 만든 뒤, 실제 전투 1회를 수행해 본 다음에 promise 를 발화했을 것입니다. 추가 반복이 30~50회 정도 더 필요했을 것으로 추정됩니다.
+
+---
+
 ## TL;DR
 
 이 작업은 24시간짜리 1인 챌린지였습니다. 목표는 `MC 26.1 + Fabric + VulkanMod + Beryl + Cobblemon + 이름표 수정`이 모두 함께 동작하는 M-chip Mac 클라이언트를 완성하는 일이었습니다. 시작 시점에는 네 개의 모드 중 어느 하나도 26.1을 공식적으로 지원하지 않는 상태였습니다. 실제 포팅 작업은 Claude Code의 Ralph loop이 한 번에 한 단계씩 자율적으로 수행했습니다. Ralph loop이란, 매 반복마다 동일한 프롬프트가 모델에 다시 입력되는 자기 참조 형태의 루프를 의미합니다.
