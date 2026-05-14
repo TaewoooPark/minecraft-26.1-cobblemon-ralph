@@ -10,7 +10,7 @@
 # Our 26.1 port is captured as a consolidated diff (impl/artifacts/cobblemon-26.1-port.diff)
 # plus stepwise patches in impl/patches/PT*.patch. The 3.5 GB tree is excluded from this repo;
 # see impl/cobblemon-port/README.md for reconstitution.
-impl/cobblemon-port/
+impl/cobblemon-port/*
 !impl/cobblemon-port/RECONSTITUTE.md
 
 # Compiled jars — too large for git, attached to GitHub Releases instead
